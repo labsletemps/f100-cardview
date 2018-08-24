@@ -1,0 +1,263 @@
+/*Bourbon mixins*/
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*Boxes settings*/
+html {
+  font-size: 16px; }
+
+body {
+  background: #e7e7e7;
+  position: relative;
+  height: 100vh;
+  line-height: 0; }
+
+img {
+  display: block;
+  width: 100%; }
+
+@font-face {
+  font-family: 'Apercu';
+  src: url("../fonts/apercu-bold.eot");
+  src: url("../fonts/apercu-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/apercu-bold.woff") format("woff"), url("../fonts/apercu-bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Apercu';
+  src: url("../fonts/apercu-regular.eot");
+  src: url("../fonts/apercu-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/apercu-regular.woff") format("woff"), url("../fonts/apercu-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Apercu';
+  src: url("../fonts/apercu-light.eot");
+  src: url("../fonts/apercu-light.eot?#iefix") format("embedded-opentype"), url("../fonts/apercu-light.woff") format("woff"), url("../fonts/apercu-light.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal; }
+
+h1 {
+  font-size: 4em;
+  line-height: 1.1;
+  margin: 0; }
+
+h2 {
+  font-size: 1.5625em;
+  line-height: 1.25; }
+
+h3 {
+  font-size: 1.953125em;
+  line-height: 1.25; }
+
+h4 {
+  font-size: 2.44140625em;
+  line-height: 1.25; }
+
+h5 {
+  font-size: 3.0517578125em;
+  line-height: 1.25; }
+
+h6 {
+  font-size: 3.8146972656em;
+  line-height: 1.25; }
+
+.align-left {
+  text-align: left; }
+
+.align-center {
+  text-align: center; }
+
+.align-right {
+  text-align: right; }
+
+header {
+  height: calc(445px + 110px) !important;
+  background-position: center top !important;
+  background-size: cover !important; }
+
+.header-top {
+  height: 110px;
+  background: white;
+  width: 100%;
+  position: relative; }
+  .header-top .back-button {
+    position: absolute;
+    left: 30px;
+    top: 25px;
+    background: #930025 !important; }
+  .header-top .header-top--container {
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 25px; }
+    .header-top .header-top--container .header-top--notch {
+      background: #930025;
+      width: 50%;
+      height: 5px;
+      margin: auto;
+      margin-bottom: 10px; }
+    .header-top .header-top--container .header-top--logo {
+      width: 100%;
+      margin: auto;
+      display: block;
+      margin-bottom: 15px; }
+    .header-top .header-top--container .header-top--title {
+      text-align: center;
+      font-family: apercu;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      font-size: 16px;
+      line-height: 20px;
+      margin: 0; }
+
+.hello-form {
+  width: 95%;
+  max-width: 1000px;
+  background: white;
+  margin: auto;
+  margin-top: -100px;
+  padding-top: 40px;
+  height: 220px;
+  margin-bottom: 50px; }
+  .hello-form .hello-form--punchline {
+    font-size: 2.5em;
+    text-align: center;
+    font-weight: 300;
+    color: #4e4e4e;
+    margin: 0 0 30px 0; }
+  .hello-form .hello-form--filters-wrapper {
+    width: 100%; }
+    .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box {
+      width: 20%;
+      float: left;
+      padding: 15px; }
+      .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box:first-child {
+        padding-left: 30px; }
+      .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box:last-child {
+        padding-right: 30px; }
+
+.grid {
+  max-width: 95%;
+  width: 1000px;
+  margin: auto;
+  float: none;
+  padding: 0;
+  overflow: auto; }
+
+.card-wide.mdl-card {
+  width: 32%;
+  margin-right: 2%;
+  float: lefT;
+  margin-bottom: 4%; }
+  @media screen and (max-width: 768px) {
+    .card-wide.mdl-card {
+      width: 49%; }
+      .card-wide.mdl-card:nth-child(2n+2) {
+        margin-right: 0 !important; } }
+  @media screen and (max-width: 500px) {
+    .card-wide.mdl-card {
+      width: 100%;
+      margin-right: 0 !important; } }
+  .card-wide.mdl-card:nth-child(3n+3) {
+    margin-right: 0; }
+    @media screen and (max-width: 768px) {
+      .card-wide.mdl-card:nth-child(3n+3) {
+        margin-right: 2%; } }
+
+.card {
+  height: 380px;
+  position: relative; }
+
+.card-header {
+  color: #fff;
+  height: 176px;
+  background-position: center center !important;
+  background-size: cover !important;
+  position: relative; }
+
+.card-menu {
+  color: white; }
+
+.card-chip {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  text-transform: uppercase;
+  background: #58b59a;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top right, #749e92, #2be2ad);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top right, #749e92, #2be2ad);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  .card-chip .card-chip__text {
+    font-size: 10px;
+    color: white; }
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 16px; }
+
+.card .card-meta {
+  display: block;
+  color: rgba(0, 0, 0, 0.54);
+  text-transform: uppercase;
+  font-size: 11px;
+  margin-bottom: 10px;
+  font-family: Roboto; }
+
+.card-title {
+  color: white !important;
+  font-size: 20px !important;
+  z-index: 10;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-weight: 500 !important;
+  font-family: 'Apercu'; }
+
+.card-desc {
+  color: #4e4e4e !important;
+  width: 100% !important; }
+
+.card-lieu {
+  width: 100% !important;
+  bottom: 0;
+  font-family: Roboto;
+  color: rgba(0, 0, 0, 0.54);
+  display: block;
+  margin-top: 10px;
+  display: block; }
+
+.card-footer {
+  width: 100% !important;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: Roboto; }
+
+h2 {
+  font-family: 'Apercu' !important; }
+
+.getmdl-select {
+  font-family: 'Apercu'; }
+
+.brand-nav {
+  display: none; }
+
+/*# sourceMappingURL=main.css.map */
