@@ -1675,13 +1675,6 @@
 		"oAP": "\/index.php",
 		"oF": 0
 		},
-	"\/indexH.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/indexH.php",
-		"oF": 0
-		},
 	"\/indexLT.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -6193,7 +6186,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 524261802,
-	"displayValue": "lt-event-222",
+	"displayValue": "lt-event",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-krieger",
 	"iconImageWasSetByUser": 0
@@ -7591,7 +7584,7 @@
 			}
 		},
 	"esLintSourceType": 0,
-	"externalServerAddress": "http:\/\/localhost:8888\/lt-event-222",
+	"externalServerAddress": "http:\/\/localhost:8888\/lt-event",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
 	"jsCheckerReservedNamesString": "TimelineMax",

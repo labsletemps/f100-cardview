@@ -128,23 +128,23 @@ header {
   margin: auto;
   margin-top: -100px;
   padding-top: 40px;
-  height: 220px;
+  height: 260px;
   margin-bottom: 50px; }
   .hello-form .hello-form--punchline {
     font-size: 2.5em;
     text-align: center;
     font-weight: 300;
     color: #4e4e4e;
-    margin: 0 0 30px 0; }
+    margin: 0 0 20px 0; }
   .hello-form .hello-form--filters-wrapper {
     width: 100%; }
     .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box {
-      width: 20%;
+      width: 33.33332%;
       float: left;
-      padding: 15px; }
-      .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box:first-child {
+      padding: 0 15px; }
+      .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box:nth-child(3n+1) {
         padding-left: 30px; }
-      .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box:last-child {
+      .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box:nth-child(3n+3) {
         padding-right: 30px; }
 
 .grid {
@@ -221,6 +221,9 @@ header {
   margin-bottom: 10px;
   font-family: Roboto; }
 
+.card .card-meta .card-meta--tag {
+  float: right; }
+
 .card-title {
   color: white !important;
   font-size: 20px !important;
@@ -249,12 +252,21 @@ header {
   position: absolute;
   bottom: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  font-family: Roboto; }
+  font-family: Roboto;
+  overflow: visible !important; }
+  .card-footer .share-menu {
+    float: right;
+    padding-left: 13px;
+    padding-top: 12px;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%); }
 
 h2 {
   font-family: 'Apercu' !important; }
 
-.getmdl-select {
+.getmdl-select, .mdl-textfield {
   font-family: 'Apercu'; }
 
 .brand-nav {
