@@ -12,4 +12,11 @@ jQuery(document).ready(function($)
 
     
 
+    $('button.mdl-js-button').click(function (e) {
+        e.stopPropagation();
+        
+    }); 
+
+    
+
 });
