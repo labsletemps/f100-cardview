@@ -28,6 +28,51 @@
 	font-style: normal;
 }
 
+//search title
+.mdl-textfield
+{
+	font-family: 'ratio_reg' !important;
+}
+
+//input
+.mdl-textfield__input
+{
+	font-family: 'ratio_reg' !important;
+}
+
+//chip
+.card-chip
+{
+	font-family: 'ratio_reg' !important;
+}
+
+.card-title
+{
+	font-family: 'Rooney_medium';
+}
+
+.card-meta 
+{
+	font-family: 'ratio_reg';
+}
+
+.card-desc 
+{
+	font-family: 'rooney_light'
+}
+
+.popup-newsletter--header--title
+{
+	font-family: 'ratio_light';
+}
+
+.popup-newsletter--body--text
+{
+	font-family: 'ratio_reg';
+
+	b { font-family: 'ratio_medium'; }
+}
+
 body, input, select, textarea {
 	// font-family: _font(family);
 	// font-weight: _font(weight);

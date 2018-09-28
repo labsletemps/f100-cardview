@@ -32,6 +32,28 @@
  
 	<body style="padding-top: {{ navBarOffset }};">
 
+		<div class="popup-newsletter">
+			<div class="popup-newsletter--header">
+				<img src="img/article/thumb-newsletter-events.jpg" alt="" class="popup-newsletter--header--img">
+				<span class="popup-newsletter--header--title">Événements</span>
+			</div>
+			<div class="popup-newsletter--body">
+				<span class="popup-newsletter--body--text">
+					<b>GRATUIT</b><br>Restez informés des évènements organisés par la rédaction.
+				</span>
+				<form action="#" class="popup-newsletter--body--email">
+				  <div class="mdl-textfield mdl-js-textfield" style="width: 100%;">
+				    <input class="mdl-textfield__input" type="text" id="sample2" style="text-align: center;">
+				    <label class="mdl-textfield__label" for="sample2" style="text-align: center;">Votre email</label>
+				  </div>
+				</form>
+				<!-- Accent-colored raised button with ripple -->
+				<button class="back-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+					Soumettre
+				</button>
+			</div>
+		</div>
+
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQ2B8Q"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -49,6 +71,31 @@
 				<button class="back-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
 					Retour au site du Temps
 				</button>
+
+				<!-- <span>
+					<button id="follow-us-menu-top-right" class="follow-us mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+						Suivez-nous
+					</button>
+					<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
+					    data-mdl-for="follow-us-menu-top-right">
+					  <li class="mdl-menu__item">Facebook</li>
+					  <li class="mdl-menu__item">Twitter</li>
+					  <li class="mdl-menu__item">Linkedin</li>
+					</ul>
+				</span> -->
+
+				<div class="follow-us">
+					<span class="follow-us--text">Suivez-nous:</span>
+					<button id="follow-us-menu-top-right" class="share-menu mdl-button mdl-js-button mdl-button--icon">
+					  <i class="material-icons">share</i>
+					</button>
+					<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
+					    data-mdl-for="follow-us-menu-top-right">
+					  <li class="mdl-menu__item">Facebook</li>
+					  <li class="mdl-menu__item">Twitter</li>
+					  <li class="mdl-menu__item">Linkedin</li>
+					</ul>
+				</div>
 				
 			</div>
 			<!-- <h1>Content Filters</h1> -->

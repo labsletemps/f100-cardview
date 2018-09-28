@@ -5,6 +5,21 @@
 $brand-color: #930025;  
 
 //=====================================================================//
+// FONTS
+//=====================================================================//
+
+// headings
+@include font-face("ratio_light", "../fonts/ratio_light", $file-formats: eot woff ttf svg); 
+@include font-face("ratio_reg", "../fonts/ratio_reg", $file-formats: eot woff ttf svg); 
+@include font-face("ratio_medium", "../fonts/ratio_medium", $file-formats: eot woff ttf svg); 
+@include font-face("ratio_bold", "../fonts/ratio_bold", $file-formats: eot woff ttf svg);  
+
+// paragraphs
+@include font-face("rooney_light", "../fonts/rooney_light", $file-formats: eot woff ttf svg); 
+@include font-face("rooney_medium", "../fonts/rooney_medium", $file-formats: eot woff ttf svg); 
+@include font-face("rooney_bold", "../fonts/rooney_bold", $file-formats: eot woff ttf svg); 
+
+//=====================================================================//
 // BREAKPOINTS (BOOTSTRAP)
 //=====================================================================//
 @mixin breakpoint($class) { 

@@ -1,5 +1,7 @@
 $color: #930025;
 
+
+
 header
 {
     height: calc(445px + 110px) !important;
@@ -22,6 +24,22 @@ header
        background: #930025 !important;
        //transform: translateY(-50%);
    }
+
+  .follow-us
+  {
+    > span
+    {
+      opacity: .5;
+    }
+
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    //background: #930025 !important;
+    //background: red;
+    //width: 50px;
+    //height: 50px;
+  }
 
     .header-top--container   
     {
@@ -64,6 +82,7 @@ header
                 font-size: 16px;
                 line-height: 20px;
                 margin: 0;
+                font-family: 'ratio_reg' !important;
             }
     }
 }
@@ -79,6 +98,7 @@ header
     padding-top: 40px;
     height: 260px;
     margin-bottom: 50px;
+
     //overflow: auto;
 
     .hello-form--punchline
@@ -136,6 +156,11 @@ header
   float: lefT;
   margin-bottom: 4%;
   cursor: pointer;
+
+  &:hover 
+  {
+    opacity: 0.85;
+  }
 
   @media screen and (max-width: 768px) {
     width: 49%;
@@ -208,6 +233,7 @@ header
   { 
       font-size: 10px;
       color: white;
+      line-height: 34px;
 
   }
 }
@@ -253,7 +279,7 @@ header
   -moz-osx-font-smoothing: grayscale; 
   text-rendering: optimizeLegibility;
   font-weight: 500 !important;
-  font-family: 'Apercu';
+  
 }
 
 .card-desc
@@ -297,13 +323,78 @@ header
   }
 }
 
+.popup-newsletter
+{
+  padding: 25px 35px;
+  z-index: 10;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 330px;
+  height: 330px;
+  border: 1px solid #F7F7F7;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 14px 23px 0 rgba(183,183,183,0.50);
+
+  .popup-newsletter--header
+  {
+    width: 100%;
+
+    .popup-newsletter--header--img
+    {
+      width: 40px;
+      height: 40px;
+      border-radius: 3px;
+      margin: auto;
+      margin-bottom: 15px;
+    }
+
+    .popup-newsletter--header--title
+    {
+      text-align: center;
+      display: block;
+      width: 100%;
+      font-size: 22px;
+      margin-bottom: 25px;
+      opacity: .5;
+    }
+  }
+
+  .popup-newsletter--body
+  {
+    width: 100%;
+
+    .popup-newsletter--body--text
+    {
+      text-align: center;
+      display: block;
+       font-size: 18px;
+       line-height: 22px;
+       margin-bottom: 10px;
+       -webkit-font-smoothing: antialiased; 
+        -moz-osx-font-smoothing: grayscale; 
+        text-rendering: optimizeLegibility;
+    }
+
+    button 
+    {
+      left: 50%;
+      transform: translateX(-50%);
+      background: #930025 !important;
+    }
+  }
+}
+
 
 h2 //Punchline
 {
-  font-family: 'Apercu' !important;
+  //font-family: 'Apercu' !important;
+  font-family: 'ratio_light' !important;
 }
 
 .getmdl-select, .mdl-textfield 
 {
   font-family: 'Apercu';
 }
+

@@ -161,6 +161,161 @@
 		"oAP": "\/assets\/fonts\/apercu-regular.woff2",
 		"oF": 0
 		},
+	"\/assets\/fonts\/ratio_bold.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_bold.eot",
+		"oF": 0
+		},
+	"\/assets\/fonts\/ratio_bold.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_bold.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/fonts\/ratio_bold.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_bold.ttf",
+		"oF": 0
+		},
+	"\/assets\/fonts\/ratio_bold.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_bold.woff",
+		"oF": 0
+		},
+	"\/assets\/fonts\/ratio_light.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_light.eot",
+		"oF": 0
+		},
+	"\/assets\/fonts\/ratio_light.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_light.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/fonts\/ratio_light.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_light.ttf",
+		"oF": 0
+		},
+	"\/assets\/fonts\/ratio_light.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_light.woff",
+		"oF": 0
+		},
+	"\/assets\/fonts\/ratio_medium.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_medium.eot",
+		"oF": 0
+		},
+	"\/assets\/fonts\/ratio_medium.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_medium.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/fonts\/ratio_medium.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_medium.ttf",
+		"oF": 0
+		},
+	"\/assets\/fonts\/ratio_medium.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_medium.woff",
+		"oF": 0
+		},
+	"\/assets\/fonts\/ratio_reg.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_reg.eot",
+		"oF": 0
+		},
+	"\/assets\/fonts\/ratio_reg.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_reg.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/fonts\/ratio_reg.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_reg.ttf",
+		"oF": 0
+		},
+	"\/assets\/fonts\/ratio_reg.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ratio_reg.woff",
+		"oF": 0
+		},
+	"\/assets\/fonts\/rooney_bold.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/rooney_bold.eot",
+		"oF": 0
+		},
+	"\/assets\/fonts\/rooney_bold.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/rooney_bold.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/fonts\/rooney_bold.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/rooney_bold.ttf",
+		"oF": 0
+		},
+	"\/assets\/fonts\/rooney_bold.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/rooney_bold.woff",
+		"oF": 0
+		},
 	"\/assets\/fonts\/rooney_light.eot": {
 		"cB": 0,
 		"ft": 8192,
@@ -508,6 +663,23 @@
 		"oF": 1,
 		"oS": 0,
 		"uL": 1
+		},
+	"\/assets\/scss\/_typography.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/scss\/_typography-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/assets\/scss\/_typography.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/scss\/_typography.css.map",
+		"oF": 0
 		},
 	"\/assets\/scss\/_typography.scss": {
 		"aP": 0,
@@ -1519,6 +1691,17 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/article\/step8.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/article\/thumb-newsletter-events.jpg": {
+		"ft": 16384,
+		"iS": 7435,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/img\/article\/thumb-newsletter-events.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
