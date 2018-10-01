@@ -1,3 +1,7 @@
+$color: #930025;
+$gray-light: #f2f2f2;
+$gray-light-gray-text: #7f8081;
+
 @font-face {
 	font-family: 'Apercu';
 	src: url('../fonts/apercu-bold.eot');
@@ -26,6 +30,44 @@
 		url('../fonts/apercu-light.ttf') format('truetype');
 	font-weight: 100;
 	font-style: normal;
+}
+
+//prefooter
+h4
+{
+	text-align: center;
+	color: $gray-light-gray-text;
+	font-size: 24px;
+	font-family: 'ratio_light' !important;
+	-webkit-font-smoothing: antialiased; 
+                -moz-osx-font-smoothing: grayscale; 
+                text-rendering: optimizeLegibility;
+	//background: red;
+	//display: inline-block;
+	
+	
+	&:after
+	{
+
+
+		    
+		  //   top: .77em;
+    // width: 100%;
+    // max-width: 1000px;
+    //     border-top: 1px solid #cdcece;
+    // content: '';
+    // display: block;
+    // position: relative;
+    // margin: auto;
+	}
+	
+}
+
+//share this page
+h6
+{
+	margin: 0!important;
+	display: inline;
 }
 
 //search title

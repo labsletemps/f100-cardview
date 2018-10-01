@@ -35,6 +35,10 @@
   font-family: "rooney_bold";
   src: url("../fonts/rooney_bold.eot?#iefix") format("embedded-opentype"), url("../fonts/rooney_bold.woff") format("woff"), url("../fonts/rooney_bold.ttf") format("truetype"), url("../fonts/rooney_bold.svg#rooney_bold") format("svg"); }
 
+@font-face {
+  font-family: "tungsten";
+  src: url("../fonts/tungsten-medium.eot?#iefix") format("embedded-opentype"), url("../fonts/tungsten-medium.woff") format("woff"), url("../fonts/tungsten-medium.ttf") format("truetype"), url("../fonts/tungsten-medium.svg#tungsten") format("svg"); }
+
 html {
   font-size: 16px; }
 
@@ -68,6 +72,19 @@ img {
   src: url("../fonts/apercu-light.eot?#iefix") format("embedded-opentype"), url("../fonts/apercu-light.woff") format("woff"), url("../fonts/apercu-light.ttf") format("truetype");
   font-weight: 100;
   font-style: normal; }
+
+h4 {
+  text-align: center;
+  color: #7f8081;
+  font-size: 24px;
+  font-family: 'ratio_light' !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility; }
+
+h6 {
+  margin: 0 !important;
+  display: inline; }
 
 .mdl-textfield {
   font-family: 'ratio_reg' !important; }
@@ -142,13 +159,15 @@ header {
   .header-top .back-button {
     position: absolute;
     left: 30px;
-    top: 25px;
-    background: #930025 !important; }
-  .header-top .follow-us {
+    top: 50%;
+    background: #930025 !important;
+    transform: translateY(-50%); }
+  .header-top .share-this-page {
     position: absolute;
-    top: 25px;
-    right: 30px; }
-    .header-top .follow-us > span {
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%); }
+    .header-top .share-this-page > span {
       opacity: .5; }
   .header-top .header-top--container {
     width: 200px;
@@ -375,5 +394,29 @@ h2 {
 
 .getmdl-select, .mdl-textfield {
   font-family: 'Apercu'; }
+
+footer .prefooter {
+  background: #f2f2f2;
+  overflow: auto; }
+  footer .prefooter ul {
+    display: block;
+    text-align: center; }
+    footer .prefooter ul li {
+      display: inline-block;
+      font-family: tungsten;
+      text-transform: uppercase;
+      font-size: 27px;
+      padding: 0 15px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility; }
+      footer .prefooter ul li.facebook {
+        color: #3b5998; }
+      footer .prefooter ul li.twitter {
+        color: #55acee; }
+      footer .prefooter ul li.instagram {
+        color: #e1306c; }
+      footer .prefooter ul li.linkedin {
+        color: #0077B5; }
 
 /*# sourceMappingURL=main.css.map */

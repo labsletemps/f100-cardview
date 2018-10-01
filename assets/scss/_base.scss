@@ -19,6 +19,9 @@ $brand-color: #930025;
 @include font-face("rooney_medium", "../fonts/rooney_medium", $file-formats: eot woff ttf svg); 
 @include font-face("rooney_bold", "../fonts/rooney_bold", $file-formats: eot woff ttf svg); 
 
+// numbers
+@include font-face("tungsten", "../fonts/tungsten-medium", $file-formats: eot woff ttf svg); 
+
 //=====================================================================//
 // BREAKPOINTS (BOOTSTRAP)
 //=====================================================================//
