@@ -1,5 +1,4 @@
 header {
-  height: calc(445px + 110px) !important;
   background-position: center top !important;
   background-size: cover !important; }
 
@@ -53,6 +52,13 @@ header {
       margin: 0;
       font-family: 'ratio_reg' !important; }
 
+.header-figures {
+  background: url("../../img/article/berthollet.jpg");
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 445px; }
+
 .hello-form {
   width: 95%;
   max-width: 1000px;
@@ -71,13 +77,15 @@ header {
   .hello-form .hello-form--filters-wrapper {
     width: 100%; }
     .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box {
-      width: 33.33332%;
+      width: 50%;
       float: left;
       padding: 0 15px; }
-      .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box:nth-child(3n+1) {
+      .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box:nth-child(2n+1) {
         padding-left: 30px; }
-      .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box:nth-child(3n+3) {
+      .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box:nth-child(2n+2) {
         padding-right: 30px; }
+      .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box .mdl-textfield {
+        width: 100%; }
 
 .grid {
   max-width: 95%;
@@ -87,28 +95,35 @@ header {
   padding: 0;
   overflow: auto; }
 
-.card-wide.mdl-card {
+.container {
+  max-width: 95%;
+  width: 1000px;
+  margin: auto; }
+
+a.event {
   width: 32%;
   margin-right: 2%;
   float: lefT;
   margin-bottom: 4%;
   cursor: pointer; }
-  .card-wide.mdl-card:hover {
+  a.event:hover {
     opacity: 0.85; }
   @media screen and (max-width: 768px) {
-    .card-wide.mdl-card {
+    a.event {
       width: 49%; }
-      .card-wide.mdl-card:nth-child(2n+2) {
+      a.event:nth-child(2n+2) {
         margin-right: 0 !important; } }
   @media screen and (max-width: 500px) {
-    .card-wide.mdl-card {
+    a.event {
       width: 100%;
       margin-right: 0 !important; } }
-  .card-wide.mdl-card:nth-child(3n+3) {
+  a.event:nth-child(3n+3) {
     margin-right: 0; }
     @media screen and (max-width: 768px) {
-      .card-wide.mdl-card:nth-child(3n+3) {
+      a.event:nth-child(3n+3) {
         margin-right: 2%; } }
+  a.event .card {
+    width: auto; }
 
 .card {
   height: 380px;
@@ -198,75 +213,123 @@ header {
     top: 50%;
     transform: translateY(-50%); }
 
-.popup-newsletter {
-  padding: 25px 35px;
-  z-index: 10;
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  width: 330px;
-  height: 330px;
-  border: 1px solid #F7F7F7;
-  background: white;
-  border-radius: 3px;
-  box-shadow: 0 14px 23px 0 rgba(183, 183, 183, 0.5); }
-  .popup-newsletter .popup-newsletter--header {
-    width: 100%; }
-    .popup-newsletter .popup-newsletter--header .popup-newsletter--header--img {
-      width: 40px;
-      height: 40px;
-      border-radius: 3px;
-      margin: auto;
-      margin-bottom: 15px; }
-    .popup-newsletter .popup-newsletter--header .popup-newsletter--header--title {
-      text-align: center;
-      display: block;
-      width: 100%;
-      font-size: 22px;
-      margin-bottom: 25px;
-      opacity: .5; }
-  .popup-newsletter .popup-newsletter--body {
-    width: 100%; }
-    .popup-newsletter .popup-newsletter--body .popup-newsletter--body--text {
-      text-align: center;
-      display: block;
-      font-size: 18px;
-      line-height: 22px;
-      margin-bottom: 10px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility; }
-    .popup-newsletter .popup-newsletter--body button {
-      left: 50%;
-      transform: translateX(-50%);
-      background: #930025 !important; }
-
 h2 {
   font-family: 'ratio_light' !important; }
 
 .getmdl-select, .mdl-textfield {
   font-family: 'Apercu'; }
 
-footer .prefooter {
-  background: #f2f2f2;
-  overflow: auto; }
-  footer .prefooter ul {
-    display: block;
-    text-align: center; }
-    footer .prefooter ul li {
-      display: inline-block;
-      font-family: tungsten;
-      text-transform: uppercase;
-      font-size: 27px;
-      padding: 0 15px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility; }
-      footer .prefooter ul li.facebook {
-        color: #3b5998; }
-      footer .prefooter ul li.twitter {
-        color: #55acee; }
-      footer .prefooter ul li.instagram {
-        color: #e1306c; }
-      footer .prefooter ul li.linkedin {
-        color: #0077B5; }
+footer {
+  background: #930025;
+  padding-bottom: 30px; }
+  footer .footer-top {
+    background: #f2f2f2;
+    padding: 30px 0 0 0;
+    overflow: auto; }
+    footer .footer-top .newsletter {
+      float: left;
+      padding: 25px 35px;
+      z-index: 10;
+      width: 49%;
+      height: 330px;
+      border: 1px solid #F7F7F7;
+      background: white;
+      border-radius: 2px;
+      margin-right: 2%; }
+      footer .footer-top .newsletter .newsletter--close-button {
+        position: absolute;
+        top: 16px;
+        right: 16px; }
+      footer .footer-top .newsletter .newsletter--header {
+        width: 100%; }
+        footer .footer-top .newsletter .newsletter--header .newsletter--header--img {
+          width: 40px;
+          height: 40px;
+          border-radius: 3px;
+          margin: auto;
+          margin-bottom: 15px; }
+        footer .footer-top .newsletter .newsletter--header .newsletter--header--title {
+          text-align: center;
+          display: block;
+          width: 100%;
+          font-size: 22px;
+          margin-bottom: 25px;
+          opacity: .5;
+          font-family: 'ratio_light'; }
+      footer .footer-top .newsletter .newsletter--body {
+        width: 100%; }
+        footer .footer-top .newsletter .newsletter--body .newsletter--body--text {
+          font-family: 'rooney_light';
+          text-align: center;
+          display: block;
+          font-size: 18px;
+          line-height: 22px;
+          margin-bottom: 10px;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          text-rendering: optimizeLegibility; }
+        footer .footer-top .newsletter .newsletter--body button {
+          left: 50%;
+          transform: translateX(-50%);
+          background: #930025 !important; }
+    footer .footer-top .promo {
+      float: right;
+      width: 49%;
+      height: 330px;
+      background: white;
+      border-radius: 2px;
+      padding: 25px 35px; }
+      footer .footer-top .promo .promo--image {
+        width: 200px;
+        margin: auto;
+        margin-bottom: 25px; }
+      footer .footer-top .promo .promo--title {
+        text-align: center;
+        display: block;
+        width: 100%;
+        font-size: 22px;
+        margin-bottom: 15px;
+        opacity: .5;
+        font-family: 'ratio_light'; }
+      footer .footer-top .promo .promo--text {
+        font-family: 'rooney_light';
+        text-align: center;
+        display: block;
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 10px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        margin-bottom: 25px; }
+        footer .footer-top .promo .promo--text span {
+          font-family: 'rooney_bold';
+          color: #930025; }
+      footer .footer-top .promo .promo--button {
+        background: #930025;
+        lefT: 50%;
+        transform: translateX(-50%); }
+  footer .footer-bottom {
+    background: #f2f2f2;
+    overflow: auto;
+    padding: 25px; }
+    footer .footer-bottom ul {
+      display: block;
+      text-align: center; }
+      footer .footer-bottom ul li {
+        display: inline-block;
+        font-family: tungsten;
+        text-transform: uppercase;
+        font-size: 27px;
+        padding: 0 15px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility; }
+        footer .footer-bottom ul li.facebook {
+          color: #3b5998; }
+        footer .footer-bottom ul li.twitter {
+          color: #55acee; }
+        footer .footer-bottom ul li.instagram {
+          color: #e1306c; }
+        footer .footer-bottom ul li.linkedin {
+          color: #0077B5; }

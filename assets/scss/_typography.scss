@@ -123,18 +123,8 @@ body, input, select, textarea {
 }
 
 a {
-	// @include vendor('transition', (
-	// 	'color #{_duration(transition)} ease-in-out',
-	// 	'background-color #{_duration(transition)} ease-in-out',
-	// 	'border-color #{_duration(transition)} ease-in-out',
-	// 	'box-shadow #{_duration(transition)} ease-in-out'
-	// ));
-	// border-bottom: dotted 1px;
-	// text-decoration: none;
-
-	// &:hover {
-	// 	border-bottom-color: transparent;
-	// }
+	color: inherit!important;
+	text-decoration: none;
 }
 
 strong, b {

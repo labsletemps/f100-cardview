@@ -7,7 +7,7 @@
 		"uuidString": "3187371A-6B72-4F4B-AF56-6FC65DC500E1"
 		}
 	],
-"creatorBuild": "28841",
+"creatorBuild": "28901",
 "files": {
 	"/assets/css/getmdl-select.min-min.css": {
 		"aP": 1,
@@ -486,6 +486,16 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/assets/js/isInViewport.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/js/isInViewport.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/assets/js/jquery.fitvids.js": {
 		"ft": 64,
 		"ma": 0,
@@ -542,6 +552,36 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/assets/js/main-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/assets/js/mixitup-pagination.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/js/mixitup-pagination.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/assets/js/mixitup.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/js/mixitup-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/assets/js/mixitup.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/js/mixitup.min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1536,6 +1576,16 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/img/article/promo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/article/promo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"/img/article/slider1.jpg": {
 		"ft": 16384,
 		"iS": 359948,
@@ -1913,11 +1963,11 @@
 		"oAP": "/index.php",
 		"oF": 0
 		},
-	"/indexLT.php": {
+	"/indexH.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "/indexLT.php",
+		"oAP": "/indexH.php",
 		"oF": 0
 		},
 	"/json/data.json": {

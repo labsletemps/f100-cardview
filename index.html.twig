@@ -11,81 +11,57 @@
 		})(window,document,'script','dataLayer','GTM-TQ2B8Q');</script>
 		<!-- End Google Tag Manager -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">-->
+		<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
 		<link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-		<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/TextPlugin.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script src="assets/js/getmdl-select.min.js"></script>
-
-
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/getmdl-select.min.css" />
+		
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>-->
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/TextPlugin.min.js"></script>-->
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>-->
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>-->
+		
+		
+		
+
+
+		
 
 	</head>  
  
 	<body style="padding-top: {{ navBarOffset }};">
 
-		<div class="popup-newsletter">
-			<div class="popup-newsletter--header">
-				<img src="img/article/thumb-newsletter-events.jpg" alt="" class="popup-newsletter--header--img">
-				<span class="popup-newsletter--header--title">Événements</span>
-			</div>
-			<div class="popup-newsletter--body">
-				<span class="popup-newsletter--body--text">
-					<b>GRATUIT</b><br>Restez informés des évènements organisés par la rédaction.
-				</span>
-				<form action="#" class="popup-newsletter--body--email">
-				  <div class="mdl-textfield mdl-js-textfield" style="width: 100%;">
-				    <input class="mdl-textfield__input" type="text" id="sample2" style="text-align: center;">
-				    <label class="mdl-textfield__label" for="sample2" style="text-align: center;">Votre email</label>
-				  </div>
-				</form>
-				<!-- Accent-colored raised button with ripple -->
-				<button class="back-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-					Soumettre
-				</button>
-			</div>
-		</div>
-
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQ2B8Q"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+		<!-- End Google Tag Manager (noscript) -->
 		
-		<header class="cd-header" style="background:url('img/article/berthollet.jpg')">
+		<header class="cd-header">
 			<div class="header-top">
 				<div class="header-top--container">
-					<!-- <div class="header-top--notch"></div> -->
 					<img class="header-top--logo" src="img/article/logo-t.svg" alt="">
 					<h2 class="header-top--title">Événements</h2>
 				</div>
 
-				<!-- Accent-colored raised button with ripple -->
-				<button class="back-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+				<!-- <button class="back-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
 					Retour au site du Temps
-				</button>
+				</button> -->
 
-				<!-- <span>
-					<button id="follow-us-menu-top-right" class="follow-us mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-						Suivez-nous
-					</button>
-					<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-					    data-mdl-for="follow-us-menu-top-right">
-					  <li class="mdl-menu__item">Facebook</li>
-					  <li class="mdl-menu__item">Twitter</li>
-					  <li class="mdl-menu__item">Linkedin</li>
-					</ul>
-				</span> -->
+				<div class="back-to-letemps">
+					<a href="https://www.letemps.ch" target="_blank">
+						<button id="back-to-letemps-button" class="share-menu mdl-button mdl-js-button mdl-button--icon">
+						<i class="material-icons" style="float: left;">keyboard_arrow_left</i>	</button>
+						<h6 class="share-this-page--text">LeTemps.ch</h6>
+					</a>
+				</div>
 
 				<div class="share-this-page">
-					<span class="share-this-page--text"><h6>Partagez cette page:</h6></span>
+					<span class="share-this-page--text"><h6>Partagez <span>cette page</span>:</h6></span>
 					<button id="share-this-page-menu-top-right" class="share-menu mdl-button mdl-js-button mdl-button--icon">
 					  <i class="material-icons">share</i>
 					</button>
@@ -96,9 +72,10 @@
 					  <li class="mdl-menu__item">Linkedin</li>
 					</ul>
 				</div>
-				
 			</div>
-			<!-- <h1>Content Filters</h1> -->
+
+			<div class="header-figures"></div>
+
 		</header>
 
 		<main>
@@ -106,62 +83,58 @@
 				<h2 class="hello-form--punchline">Trouvez votre prochain rendez-vous</h2>
 				<div class="hello-form--filters-wrapper">
 					<div class="hello-form--filters-wrapper--box ">
-
-
 						<form action="#">
 						  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						    <input class="mdl-textfield__input" type="text" id="sample3">
-						    <label class="mdl-textfield__label" for="sample3"><i class="material-icons">search</i><span style="position: absolute;
-    top: 2px;">Rechercher un terme</span></label>
+						    <label class="mdl-textfield__label" for="sample3"><i class="material-icons">search</i><span style="position: absolute; top: 2px;">Rechercher un terme</span></label>
 						  </div>
 						</form>
-						
-						
 					</div>
 					<div class="hello-form--filters-wrapper--box ">
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
 					        <input type="text" value="" class="mdl-textfield__input" id="filter-place" readonly>
 					        <input type="hidden" value="" name="filter-place">
 					        <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-					        <label for="filter-place" class="mdl-textfield__label">Lieu</label>
+					        <label for="filter-place" class="mdl-textfield__label">Catégorie</label>
 					        <ul for="filter-place" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-					            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider" data-val="cat-all">Tous</li>
-					            <li class="mdl-menu__item" data-val="cat-pomme">Lausanne</li>
-					            <li class="mdl-menu__item" data-val="cat-poire">Genève</li>
+					            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider" data-val="cat-all">Toutes</li>
+					            <li class="mdl-menu__item" data-val="cat-pomme">Concert</li>
+					            <li class="mdl-menu__item" data-val="cat-poire">Game jam</li>
+					            <li class="mdl-menu__item" data-val="cat-poire">Rencontre</li>
 					        </ul>
 					    </div>
-						
 					</div>
-					<div class="hello-form--filters-wrapper--box">
+					<div class="hello-form--filters-wrapper--box margin-negative-top">
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
 					        <input type="text" value="" class="mdl-textfield__input" id="filter-category" readonly>
 					        <input type="hidden" value="" name="filter-category">
 					        <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-					        <label for="filter-category" class="mdl-textfield__label">Catégorie</label>
+					        <label for="filter-category" class="mdl-textfield__label">Premium</label>
 					        <ul for="filter-category" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-					            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider" data-val="cat-all">Toutes</li>
-					            <li class="mdl-menu__item" data-val="cat-pomme">Pomme</li>
-					            <li class="mdl-menu__item" data-val="cat-poire">Poire</li>
-					            <li class="mdl-menu__item" data-val="cat-scoubidou">Scoubidou</li>
+					            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider" data-val="cat-all" data-filter="all">Tous</li>
+					            <li class="mdl-menu__item" data-val="cat-pomme" data-filter=".category-premium">Oui</li>
+					            <li class="mdl-menu__item" data-val="cat-poire">Non</li>
 					        </ul>
 					    </div>
 						<!-- cd-filter-content -->
 					</div>
-					<div class="hello-form--filters-wrapper--box ">
+					<div class="hello-form--filters-wrapper--box margin-negative-top">
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
 					        <input type="text" value="" class="mdl-textfield__input" id="filter-subtype" readonly>
 					        <input type="hidden" value="" name="filter-subtype">
 					        <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-					        <label for="filter-subtype" class="mdl-textfield__label">Souscription</label>
+					        <label for="filter-subtype" class="mdl-textfield__label">Année</label>
 					        <ul for="filter-subtype" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
 					            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider" data-val="cat-all">Toutes</li>
-					            <li class="mdl-menu__item" data-val="cat-pomme">Normale</li>
-					            <li class="mdl-menu__item" data-val="cat-poire">Premium</li>
+					            <li class="mdl-menu__item" data-val="cat-pomme">2018</li>
+					            <li class="mdl-menu__item" data-val="cat-poire">2017</li>
+					            <li class="mdl-menu__item" data-val="cat-poire">2016</li>
+					            <li class="mdl-menu__item" data-val="cat-poire">2015</li>
 					        </ul>
 					    </div>
 						<!-- cd-filter-content -->
 					</div>
-					<div class="hello-form--filters-wrapper--box ">
+					<!-- <div class="hello-form--filters-wrapper--box ">
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
 					        <input type="text" value="" class="mdl-textfield__input" id="filter-subtype" readonly>
 					        <input type="hidden" value="" name="filter-subtype">
@@ -173,7 +146,6 @@
 					            <li class="mdl-menu__item" data-val="cat-poire">Non</li>
 					        </ul>
 					    </div>
-						<!-- cd-filter-content -->
 					</div>
 					<div class="hello-form--filters-wrapper--box ">
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
@@ -187,168 +159,142 @@
 					            <li class="mdl-menu__item" data-val="cat-pomme">2016</li>
 					        </ul>
 					    </div>
-						<!-- cd-filter-content -->
-					</div>
+					</div> -->
 				</div>
 			</div>
 
 			<div class="grid">
 
-				<div class="card test card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-					<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-						<span class="card-chip mdl-chip">
-						    <span class="card-chip__text mdl-chip__text">Premium</span>
-						</span>
-						<div class="card-overlay">
-							<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet</h1>
+				<a href="#" class="event category-premium">
+					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
+						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
+							<span class="card-chip mdl-chip">
+							    <span class="card-chip__text mdl-chip__text">Premium</span>
+							</span> 
+							<div class="card-overlay">
+								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet</h1>
+							</div>
+							
 						</div>
-						
+						<div class="card-desc mdl-card__supporting-text">
+							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
+							<h1 class="card-title card-title-mobile">Concert des soeurs Berthollet</h1>
+							<span class="desc-txt">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Mauris sagittis pellentesque lacus eleifend lacinia...</span>
+						</div>
+						<div class="card-footer mdl-card__supporting-text">
+							Rédaction du Temps, <b>Lausanne</b>
+							<button id="demo-menu-top-right" class="share-menu mdl-button mdl-js-button mdl-button--icon">
+							  <i class="material-icons">share</i>
+							</button>
+							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
+							    data-mdl-for="demo-menu-top-right">
+							  <li class="mdl-menu__item">Facebook</li>
+							  <li class="mdl-menu__item">Twitter</li>
+							  <li class="mdl-menu__item">Linkedin</li>
+							</ul>
+						</div>
 					</div>
-					<div class="card-desc mdl-card__supporting-text">
-						<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Mauris sagittis pellentesque lacus eleifend lacinia...
-					</div>
-					<div class="card-footer mdl-card__supporting-text">
-						Rédaction du Temps, <b>Lausanne</b>
-						<button id="demo-menu-top-right" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-						  <i class="material-icons">share</i>
-						</button>
-						<ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-						    data-mdl-for="demo-menu-top-right">
-						  <li class="mdl-menu__item">Facebook</li>
-						  <li class="mdl-menu__item">Twitter</li>
-						  <li class="mdl-menu__item">Linkedin</li>
-						</ul>
-					</div>
-					
-				</div>
+				</a>
 
-				<div class="card card-wide mdl-card mdl-shadow--2dp">
-					<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-						<span class="card-chip mdl-chip">
-						    <span class="card-chip__text mdl-chip__text">Premium</span>
-						</span>
-						<div class="card-overlay">
-							<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet</h1>
+				<a href="#" class="event category-premium">
+					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
+						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
+							<span class="card-chip mdl-chip">
+							    <span class="card-chip__text mdl-chip__text">Premium</span>
+							</span>
+							<div class="card-overlay">
+								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet</h1>
+							</div>
+							
 						</div>
-						
-					</div>
-					<div class="card-desc mdl-card__supporting-text">
-						<span class="card-meta">13 février 2018</span>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Mauris sagittis pellentesque lacus eleifend lacinia...
-					</div>
-					<div class="card-footer mdl-card__supporting-text">
-						Rédaction du Temps, <b>Lausanne</b>
-					</div>
-					
-				</div>
-
-				<div class="card card-wide mdl-card mdl-shadow--2dp">
-					<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-						<span class="card-chip mdl-chip">
-						    <span class="card-chip__text mdl-chip__text">Premium</span>
-						</span>
-						<div class="card-overlay">
-							<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet</h1>
+						<div class="card-desc mdl-card__supporting-text">
+							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Mauris sagittis pellentesque lacus eleifend lacinia...
 						</div>
-						
-					</div>
-					<div class="card-desc mdl-card__supporting-text">
-						<span class="card-meta">13 février 2018</span>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Mauris sagittis pellentesque lacus eleifend lacinia...
-					</div>
-					<div class="card-footer mdl-card__supporting-text">
-						Rédaction du Temps, <b>Lausanne</b>
-					</div>
-					
-				</div>
-
-				<div class="card card-wide mdl-card mdl-shadow--2dp">
-					<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-						<span class="card-chip mdl-chip">
-						    <span class="card-chip__text mdl-chip__text">Premium</span>
-						</span>
-						<div class="card-overlay">
-							<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet</h1>
+						<div class="card-footer mdl-card__supporting-text">
+							Rédaction du Temps, <b>Lausanne</b>
+							<button id="demo-menu-top-right" class="share-menu mdl-button mdl-js-button mdl-button--icon">
+							  <i class="material-icons">share</i>
+							</button>
+							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
+							    data-mdl-for="demo-menu-top-right">
+							  <li class="mdl-menu__item">Facebook</li>
+							  <li class="mdl-menu__item">Twitter</li>
+							  <li class="mdl-menu__item">Linkedin</li>
+							</ul>
 						</div>
-						
 					</div>
-					<div class="card-desc mdl-card__supporting-text">
-						<span class="card-meta">13 février 2018</span>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Mauris sagittis pellentesque lacus eleifend lacinia...
-					</div>
-					<div class="card-footer mdl-card__supporting-text">
-						Rédaction du Temps, <b>Lausanne</b>
-					</div>
-					
-				</div>
-
-				<div class="card card-wide mdl-card mdl-shadow--2dp">
-					<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-						<span class="card-chip mdl-chip">
-						    <span class="card-chip__text mdl-chip__text">Premium</span>
-						</span>
-						<div class="card-overlay">
-							<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet</h1>
-						</div>
-						
-					</div>
-					<div class="card-desc mdl-card__supporting-text">
-						<span class="card-meta">13 février 2018</span>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Mauris sagittis pellentesque lacus eleifend lacinia...
-					</div>
-					<div class="card-footer mdl-card__supporting-text">
-						Rédaction du Temps, <b>Lausanne</b>
-					</div>
-					
-				</div>
-
-				<div class="card card-wide mdl-card mdl-shadow--2dp">
-					<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-						<span class="card-chip mdl-chip">
-						    <span class="card-chip__text mdl-chip__text">Premium</span>
-						</span>
-						<div class="card-overlay">
-							<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet</h1>
-						</div>
-						
-					</div>
-					<div class="card-desc mdl-card__supporting-text">
-						<span class="card-meta">13 février 2018</span>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Mauris sagittis pellentesque lacus eleifend lacinia...
-					</div>
-					<div class="card-footer mdl-card__supporting-text">
-						Rédaction du Temps, <b>Lausanne</b>
-					</div>
-					
-				</div>
+				</a>
 
 			</div>
+
+			<div class="mixitup-page-list-trigger"></div>
+			<div class="mixitup-page-list is-pinned"></div>
+
 		</main>
 
 		<footer>
-			<div class="prefooter">
-				<h4>Suivez les événements du Temps sur les réseaux sociaux</h4>
-				<ul>
-					<li class="facebook">Facebook</li>
-					<li class="twitter">Twitter</li>
-					<li class="instagram">Instagram</li>
-					<li class="linkedin">Linkedin</li>
-				</ul>
+			<div class="footer-top">
+				<div class="container">
+
+					<div class="newsletter">
+						<div class="newsletter--header">
+							<img src="img/article/thumb-newsletter-events.jpg" alt="" class="newsletter--header--img">
+							<span class="newsletter--header--title">Newsletter Événements</span>
+						</div>
+						<div class="newsletter--body">
+							<span class="newsletter--body--text">
+								<b>GRATUIT</b><br>Restez informés des évènements organisés par la rédaction.
+							</span>
+							<form action="#" class="newsletter--body--email">
+							  <div class="mdl-textfield mdl-js-textfield" style="width: 100%;">
+							    <input class="mdl-textfield__input" type="text" id="sample2" style="text-align: center;">
+							    <label class="mdl-textfield__label" for="sample2" style="text-align: center;">Votre email</label>
+							  </div>
+							</form>
+							<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+								Soumettre
+							</button>
+						</div>
+					</div>
+
+					<div class="promo">
+						<img src="img/article/promo.svg" alt="" class="promo--image">
+						<span class="promo--title">Soutenez une presse de qualité</span>
+						<span class="promo--text">Abonnez-vous et choisissez la formule qui vous convient. À partir de <span>9 CHF</span> par mois</span>
+						<button class="promo--button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+							Je m'abonne
+						</button>
+					</div>
+					
+				</div>
 			</div>
-			
+			<div class="footer-bottom">
+				<div class="container">
+
+						<h4>Suivez les événements du Temps sur les réseaux sociaux</h4>
+						<ul>
+							<li class="facebook"><a href="https://www.letemps.ch" target="_blank">Facebook</a></li>
+							<li class="twitter"><a href="https://www.letemps.ch" target="_blank">Twitter</a></li>
+							<li class="instagram"><a href="https://www.letemps.ch" target="_blank">Instagram</a></li>
+							<li class="linkedin"><a href="https://www.letemps.ch" target="_blank">Linkedin</a></li>
+						</ul>
+				</div>
+			</div>
 		</footer>
 		
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="assets/js/getmdl-select.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		<script src="assets/js/mixitup.min.js"></script>
+		<script src="assets/js/mixitup-pagination.min.js"></script>
+		<script src="assets/js/main.js"></script> 
 	</body>
 	
 </html>
