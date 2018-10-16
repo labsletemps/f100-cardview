@@ -284,8 +284,9 @@ header {
       width: 50%;
       float: left;
       padding: 0 15px; }
-      .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box.margin-negative-top {
-        margin-top: -15px; }
+      @media (max-width: 576px) {
+        .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box.margin-negative-top {
+          margin-top: -15px; } }
       .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box:nth-child(2n+1) {
         padding-left: 30px; }
       .hello-form .hello-form--filters-wrapper .hello-form--filters-wrapper--box:nth-child(2n+2) {
@@ -295,11 +296,17 @@ header {
 
 .grid {
   max-width: 95%;
-  width: 1000px;
+  width: calc(1000px + 1.333%);
   margin: auto;
   float: none;
   padding: 0;
   overflow: auto; }
+  @media (max-width: 768px) {
+    .grid {
+      max-width: 97%; } }
+  @media (max-width: 576px) {
+    .grid {
+      max-width: 95%; } }
 
 .container {
   max-width: 95%;
@@ -307,36 +314,31 @@ header {
   margin: auto; }
 
 a.event {
-  width: 32%;
-  margin-right: 2%;
+  width: 31.33332%;
+  margin-right: 1%;
+  margin-left: 1%;
   float: lefT;
   margin-bottom: 30px;
-  cursor: pointer; }
+  cursor: pointer;
+  overflow: visible; }
   @media (max-width: 768px) {
     a.event {
-      margin-bottom: 15px; } }
+      margin-bottom: 15px;
+      width: 48%; } }
+  @media (max-width: 576px) {
+    a.event {
+      margin-right: 0;
+      margin-left: 0;
+      width: 100%; } }
   a.event:hover {
     opacity: 0.85; }
-  @media screen and (max-width: 768px) {
-    a.event {
-      width: 49%; }
-      a.event:nth-child(2n+2) {
-        margin-right: 0 !important; } }
-  @media screen and (max-width: 500px) {
-    a.event {
-      width: 100%;
-      margin-right: 0 !important; } }
-  a.event:nth-child(3n+3) {
-    margin-right: 0; }
-    @media screen and (max-width: 768px) {
-      a.event:nth-child(3n+3) {
-        margin-right: 2%; } }
   a.event .card {
     width: auto; }
 
 .card {
   height: 380px;
-  position: relative; }
+  position: relative;
+  overflow: visible !important; }
   @media (max-width: 576px) {
     .card {
       display: block !important;
@@ -485,8 +487,9 @@ footer {
       float: left;
       padding: 25px 35px;
       z-index: 10;
+      overflow: hidden;
       width: 49%;
-      height: 330px;
+      min-height: 330px;
       border: 1px solid #F7F7F7;
       background: white;
       border-radius: 2px;
@@ -635,7 +638,20 @@ footer {
       background: gainsboro !important;
       box-shadow: none !important; }
     .mixitup-page-list button.mixitup-control-active {
-      background: #930025;
+      background: #930025 !important;
       color: white; }
+
+.error-message {
+  width: 1000px;
+  max-width: 90%;
+  margin: auto;
+  text-align: center;
+  padding: 30px 0 30px 0;
+  margin-bottom: 50px;
+  background: #ffb8c5; }
+  .error-message .reset-filters {
+    background: #b80021 !important; }
+    .error-message .reset-filters i {
+      margin-top: -2px; }
 
 /*# sourceMappingURL=main.css.map */

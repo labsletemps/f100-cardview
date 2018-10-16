@@ -1,0 +1,20 @@
+// #mc_embed_signup .button
+// {
+//     font-family: "Roboto","Helvetica","Arial",sans-serif;
+//     font-size: 14px;
+//     font-weight: 500;
+//     text-transform: uppercase;
+//     letter-spacing: 0;
+//        cursor: pointer;
+//     text-decoration: none;
+//     text-align: center;
+//     line-height: 36px;
+//     color: yellow !important;
+// }
+
+#mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error, #mc_embed_signup div.mce_inline_error
+{
+	color: yellow !important;
+	display: none!important;
+	visibility: hidden !important;
+}
