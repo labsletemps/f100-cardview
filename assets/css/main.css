@@ -354,6 +354,9 @@ header {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top right, #749e92, #2be2ad);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+    .card .card-chip.premium-is-0 {
+      display: none;
+      visibility: hidden; }
     @media (max-width: 576px) {
       .card .card-chip {
         left: 0;

@@ -25,27 +25,28 @@
 			{{#each post}}
 				<a href="#" class="event premium y2018">
 					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
+						<div class="card-header mdl-card__title" style="background: url('{{thumbnail_images.et-pb-post-main-image-fullwidth.url}}')">
+							<span class="card-chip mdl-chip premium-is-{{custom_fields.event_is_premium}}">
 							    <span class="card-chip__text mdl-chip__text">Premium</span>
 							</span>
 							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 2</h1>
+								<h1 class="card-title mdl-card__title-text">{{title}}</h1>
 							</div>
 							
 						</div>
 						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...
+							<span class="card-meta"><span class""card-meta--date>{{custom_fields.event_date}}</span><span class="card-meta--tag">#{{categories.0.title}}</span></span>
+							{{custom_fields.event_desc}}
 						</div>
 						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="card-share-menu-i" class="share-menu mdl-button mdl-js-button mdl-button--icon">
+							
+							{{{custom_fields.event_where}}}
+							
+							<button id="card-share-menu-{{id}}" class="share-menu mdl-button mdl-js-button mdl-button--icon">
 							  <i class="material-icons">share</i>
 							</button>
 							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="card-share-menu-i">
+							    data-mdl-for="card-share-menu-{{id}}">
 							  <li class="mdl-menu__item">Facebook</li>
 							  <li class="mdl-menu__item">Twitter</li>
 							  <li class="mdl-menu__item">Linkedin</li>

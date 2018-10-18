@@ -5,7 +5,11 @@
 jQuery(document).ready(function($)
 {
 
-
+    //Google API
+    // DATE
+    // lieu Ailleurs
+    // Menu avec s'y rendre et partager
+    // Bouton dans la barre du bas
 
     $.getJSON( "http://efbuthzk.preview.infomaniak.website/?json=1&post_type=events&callback=?", function( data ) {
        
@@ -23,23 +27,11 @@ jQuery(document).ready(function($)
         console.log(data);
         var source   = $("#event-template").html();
         var template = Handlebars.compile(source);
-
-       // var html = template(data);
-
-
         var html = template({'post':data.posts});
-        
+        $(".grid").html(html);
 
-            $(".grid").html(html);
-
-        //  $.each(data.posts, function(i, obj) {
-        //  alert(data.posts[i].slug);
-        // });
-
-        
-            
-           
-        
+        initMixer();
+        preventLinkBehavior();
     }
 
 
@@ -69,10 +61,13 @@ jQuery(document).ready(function($)
     }); 
     
     //Empèche le link quand on share une carte
-    $('.grid button.mdl-js-button').click(function (e) {
-        e.stopPropagation();
-        return false;
-    }); 
+    function preventLinkBehavior(){
+        $('.grid button.mdl-js-button').click(function (e) {
+            e.stopPropagation();
+            return false;
+        });  
+    }
+    
 
     //JS link on promo bloc
     $('button.promo--button').click(function (e) {
@@ -131,38 +126,39 @@ jQuery(document).ready(function($)
     }
 
 
-
-    window['mixer'] = mixitup(containerEl, {
-        multifilter: {
-            enable: true
-        },
-        selectors: {
-             target: '.event'
-        },
-         pagination: {
-             limit: 6, 
-             hidePageListIfSinglePage: true
-         },
-        animation: {
-            "queue": false,
-           "duration": 250,
-           "nudge": true,
-           "reverseOut": true,
-           "effects": "fade translateZ(-100px)"
-        },
-        load: {
-            filter: getSelectorFromHash()
-        },
-        callbacks: {
-            onMixStart: function() {
-                stylePagination();
+    function initMixer(){
+        window['mixer'] = mixitup(containerEl, {
+            multifilter: {
+                enable: true
             },
-            onMixEnd: setHash,
-            onMixFail: function() {
-                 showErrorMessage();
+            selectors: {
+                 target: '.event'
+            },
+             pagination: {
+                 limit: 6, 
+                 hidePageListIfSinglePage: true
+             },
+            animation: {
+                "queue": false,
+               "duration": 250,
+               "nudge": true,
+               "reverseOut": true,
+               "effects": "fade translateZ(-100px)"
+            },
+            load: {
+                filter: getSelectorFromHash()
+            },
+            callbacks: {
+                onMixStart: function() {
+                    stylePagination();
+                },
+                onMixEnd: setHash,
+                onMixFail: function() {
+                     showErrorMessage();
+                }
             }
-        }
-    });
+        });
+    }
 
     window.onhashchange = function() {
         var selector = getSelectorFromHash();
