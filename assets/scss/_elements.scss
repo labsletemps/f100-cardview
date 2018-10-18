@@ -1,16 +1,92 @@
-// #mc_embed_signup .button
-// {
-//     font-family: "Roboto","Helvetica","Arial",sans-serif;
-//     font-size: 14px;
-//     font-weight: 500;
-//     text-transform: uppercase;
-//     letter-spacing: 0;
-//        cursor: pointer;
-//     text-decoration: none;
-//     text-align: center;
-//     line-height: 36px;
-//     color: yellow !important;
-// }
+.overlay 
+{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background: white;
+	z-index: 100;
+}
+
+.mixitup-page-list
+{
+  text-align: center;
+  padding: 30px 0 60px 0;
+
+  @include breakpoint(md) {
+     padding: 15px 0 30px 0;
+  } 
+
+  @include breakpoint(md) {
+     &.is-pinned {
+      position: fixed;
+      border-top: 1px solid #efefef;
+      /* top: 0; */
+      bottom: 0;
+      z-index: 10; 
+      background: white;
+      width: 100%;
+      padding: 0;
+
+      
+    }  
+  } 
+
+  &.mixitup-page-list-disabled 
+  {
+    display: none;
+  }
+
+  button 
+  {
+    min-width: 39px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    margin: 0 2px;
+
+    @include breakpoint(md) {
+       margin: 10px 2px;
+    } 
+
+
+    &:not(.mixitup-control-active)
+    {
+      background: gainsboro !important;
+      color: black;
+    }
+
+    &.mixitup-control-disabled
+    {
+      background: gainsboro !important;
+      box-shadow: none !important;
+
+    }
+
+    &.mixitup-control-active
+    {
+      background: $color !important;
+    
+      color: white;
+    }
+  }
+}
+
+.error-message
+{
+  width: 1000px;
+  max-width: 95%;
+  margin: auto;
+  text-align: center;
+  padding: 30px 0 30px 0;
+  margin-bottom: 50px;
+  //border: 1px solid $letemps-color-2;
+  background: lighten($letemps-color-2, 50%);
+
+  .reset-filters 
+  {
+    background: $letemps-color-2 !important;
+
+    i { margin-top: -2px; }
+  }
+}
 
 #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error, #mc_embed_signup div.mce_inline_error
 {
@@ -18,3 +94,4 @@
 	display: none!important;
 	visibility: hidden !important;
 }
+

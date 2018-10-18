@@ -2,8 +2,10 @@
 //=====================================================================//
 // COLORS
 //=====================================================================//
-$brand-color: #930025;  
-
+$letemps-color-1: #930025;  
+$letemps-color-2: #b80021;
+$gray-light: #f2f2f2;
+$gray-light-gray-text: #7f8081;  
 //=====================================================================//
 // FONTS
 //=====================================================================//
@@ -21,6 +23,8 @@ $brand-color: #930025;
 
 // numbers
 @include font-face("tungsten", "../fonts/tungsten-medium", $file-formats: eot woff ttf svg); 
+
+
 
 //=====================================================================//
 // BREAKPOINTS (BOOTSTRAP)
@@ -56,18 +60,12 @@ $brand-color: #930025;
 //=====================================================================//
 html, body
 {
-  // en perspective d'embed sur lt.ch
-  // - dans mdb, mettre un media-slot - iframe
-  // - juste mettre cette propriété ci-dessous et normalament pas besoin de "scrolling='no'" comme atribut iframe
-  // - si je veux la scrollbar en dehors du rapport 16/9, il faut commencer à guezner avec pym
-  //overflow: hidden;
+ 
 }
+
 html 
 { 
     font-size: 16px;
-
-    @include breakpoint(xl) {
-    }
 }
 
 body 
@@ -82,4 +80,11 @@ img
 { 
   display:block; 
   width: 100%; 
+}
+
+.container 
+{
+  max-width: 95%;
+    width: 1000px;
+    margin: auto;
 }

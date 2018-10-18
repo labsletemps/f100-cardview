@@ -1,0 +1,193 @@
+footer
+{
+  background: $color;
+  padding-bottom: 30px;
+  @include breakpoint(md) {
+     padding-bottom: 0;
+  }
+
+  .footer-top 
+  {
+    background: $gray-light;
+    padding: 30px 0 0 0;
+    overflow: auto;
+
+    @include breakpoint(md) {
+       background: transparent;
+       padding: 30px 0 30px 0;
+    }
+
+    .newsletter
+    {
+      float: left;
+      padding: 25px 35px;
+      z-index: 10;
+      overflow: hidden;
+      width: 49%;
+      min-height: 330px;
+      border: 1px solid #F7F7F7;
+      background: white;
+      border-radius: 2px;
+      margin-right: 2%;
+
+      @include breakpoint(lg) {
+         width: 100%;
+         margin-right: 0;
+         margin-bottom: 30px;
+      }
+
+      @include breakpoint(md) {
+         margin-bottom: 15px;
+      }
+
+      .newsletter--close-button
+      {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+      }
+
+      .newsletter--header
+      {
+        width: 100%;
+
+        .newsletter--header--img
+        {
+          width: 40px;
+          height: 40px;
+          border-radius: 3px;
+          margin: auto;
+          margin-bottom: 15px;
+        }
+
+        .newsletter--header--title
+        {
+          text-align: center;
+          display: block;
+          width: 100%;
+          font-size: 22px;
+          margin-bottom: 25px;
+          opacity: .5;
+          font-family: 'ratio_light';
+        }
+      }
+
+      .newsletter--body
+      {
+        width: 100%;
+
+        .newsletter--body--text
+        {
+          font-family: 'rooney_light';
+          text-align: center;
+          display: block;
+           font-size: 18px;
+           line-height: 22px;
+           margin-bottom: 10px;
+           -webkit-font-smoothing: antialiased; 
+            -moz-osx-font-smoothing: grayscale; 
+            text-rendering: optimizeLegibility;
+        }
+
+        button 
+        {
+          left: 50%;
+          transform: translateX(-50%);
+          background: $letemps-color-1 !important;
+        }
+      }
+    }
+
+    .promo 
+    {
+      float: right;
+      width: 49%;
+      height: 330px;
+      background: white;
+      border-radius: 2px;
+      padding: 25px 35px;
+
+      @include breakpoint(lg) {
+         width: 100%;
+      }
+
+      .promo--image
+      {
+        width: 200px;
+        margin: auto;
+        margin-bottom: 25px;
+
+        @include breakpoint(lg) {
+          width: 165px;
+        }
+      }
+
+      .promo--title 
+      {
+        text-align: center;
+          display: block;
+          width: 100%;
+          font-size: 22px;
+          margin-bottom: 15px;
+          opacity: .5;
+          font-family: 'ratio_light';
+      }
+
+      .promo--text
+      {
+        font-family: 'rooney_light';
+          text-align: center;
+          display: block;
+           font-size: 18px;
+           line-height: 22px;
+           margin-bottom: 10px;
+           -webkit-font-smoothing: antialiased; 
+            -moz-osx-font-smoothing: grayscale; 
+            text-rendering: optimizeLegibility;
+            margin-bottom: 25px;
+
+            span 
+            {
+              font-family: 'rooney_bold';
+              color: $color;
+            }
+      }
+
+      .promo--button
+      {
+        background: $color;
+        lefT: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .footer-bottom
+  {
+    background: $gray-light;
+    overflow: auto;
+    padding: 25px;
+    
+    ul 
+    {
+      display: block;
+      text-align: center;
+      li 
+      {
+        display: inline-block;
+        font-family: tungsten;
+        text-transform: uppercase;
+        font-size: 27px;
+        padding: 0 15px;
+        -webkit-font-smoothing: antialiased; 
+                -moz-osx-font-smoothing: grayscale; 
+                text-rendering: optimizeLegibility;
+        
+        &.facebook { color: #3b5998; }
+        &.twitter { color: #55acee; }
+        &.instagram { color: #e1306c; }
+        &.linkedin { color: #0077B5; }
+      }
+    }
+  }
+}

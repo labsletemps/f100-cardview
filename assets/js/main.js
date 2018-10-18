@@ -4,15 +4,54 @@
 
 jQuery(document).ready(function($)
 {
-    // var $numbers 
-    // $('.card').click(function () {
-    //     $numbers = this.getAttribute('card-url');
-    //     //console.log($numbers);
-    //     window.open($numbers, '_blank');
-        
-    // }); 
 
-    
+
+
+    $.getJSON( "http://efbuthzk.preview.infomaniak.website/?json=1&post_type=events&callback=?", function( data ) {
+       
+        //console.log(data);
+
+        displayEvents(data);
+
+        // $.each(data.posts, function(i, obj) {
+        //  alert(data.posts[i].slug);
+        // });
+     
+    });
+
+    function displayEvents(data){
+        console.log(data);
+        var source   = $("#event-template").html();
+        var template = Handlebars.compile(source);
+
+       // var html = template(data);
+
+
+        var html = template({'post':data.posts});
+        
+
+            $(".grid").html(html);
+
+        //  $.each(data.posts, function(i, obj) {
+        //  alert(data.posts[i].slug);
+        // });
+
+        
+            
+           
+        
+    }
+
+
+
+
+    var tlIntroduction =  new TimelineMax({ paused: false });
+    var $overlay = $('.overlay');
+
+    tlIntroduction
+        .to($overlay, 0.5, {autoAlpha: 0, ease:Linear.easeNone}, '-=0.0'); 
+       
+
     //Pour ne pas générer une erreur de formulaire dans le cas d'un ENTER dans le champ email
     $('#mc-embedded-subscribe-form').keyup(function (e) {
         e.stopPropagation();
@@ -40,10 +79,7 @@ jQuery(document).ready(function($)
         window.open(' https://boutique.letemps.ch/abonnements', '_blank');
     }); 
 
-    //-------------------------------------------------------------------------------------//
-    //  SCROLLMAGIC STICKY CONFIG
-    //-------------------------------------------------------------------------------------//
-
+    //Pagination is stick on mobile
     var controller = new ScrollMagic.Controller();
     new ScrollMagic.Scene({triggerElement: ".mixitup-page-list-trigger", triggerHook: 0.9})
         //.setPin("footer")
@@ -59,59 +95,6 @@ jQuery(document).ready(function($)
     //-------------------------------------------------------------------------------------//
     //  MIXITUP CONFIG
 	//-------------------------------------------------------------------------------------//
-
-    // var initialFilter = ".category-premium";
-    // var targetSelector = ".event";
-
-   
-
-    // function getSelectorFromHash() {
-    //     var hash = window.location.hash.replace(/^#/g, '');
-    //     var selector = hash ? '.' + hash : targetSelector;
-    //     return selector;
-    // }
-
-
-    // mixitup('.grid', {
-    //     multifilter: { 
-    //         enable: true 
-    //     },
-    //     selectors: {
-    //         target: '.event'
-    //     },
-    //     animation: {
-    //         "duration": 250,
-    //         "nudge": true,
-    //         "reverseOut": false,
-    //         "effects": "fade translateZ(-100px)"
-    //     },
-    //     load: {
-    //         filter: getSelectorFromHash()
-    //     },
-    //     pagination: {
-    //         limit: 6, 
-    //         hidePageListIfSinglePage: true
-    //     },
-    //     callbacks: {
-    //         onMixStart: function() {
-    //             stylePagination();
-    //         },
-    //         onMixEnd: function() {
-    //             stylePagination();
-    //         }
-    //     }  
-    // });
-    
-    // function stylePagination(){
-    //     //alert('coucou');
-    //     $('.mixitup-page-list').find('button').addClass('mdl-button');
-    //     $('html, body').animate({
-    //         scrollTop:$('.hello-form').offset().top - 20
-    //     });
-    // }
-    // stylePagination();
-
-
     var containerEl = document.querySelector('.grid');
     var targetSelector = '.event';
 
@@ -195,7 +178,6 @@ jQuery(document).ready(function($)
     var $errorMessage = $('.error-message');
     var $resetFiltersButton = $('button.reset-filters');
     
-    //JS link on promo bloc
 
     $($resetFiltersButton).click(function (e) {
        resetUi();
