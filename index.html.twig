@@ -20,28 +20,71 @@
 		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/getmdl-select.min.css" />
 
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-57x57.png" />
+	    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-114x114.png" />
+	    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-72x72.png" />
+	    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-144x144.png" />
+	    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-60x60.png" />
+	    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-120x120.png" />
+	    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-76x76.png" />
+	    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-152x152.png" />
+	    <link rel="icon" type="image/png" href="http://assets.letemps.ch/themes/custom/letemps/favicons/favicon-196x196.png" sizes="196x196" />
+	    <link rel="icon" type="image/png" href="http://assets.letemps.ch/themes/custom/letemps/favicons/favicon-96x96.png" sizes="96x96" />
+	    <link rel="icon" type="image/png" href="http://assets.letemps.ch/themes/custom/letemps/favicons/favicon-32x32.png" sizes="32x32" />
+	    <link rel="icon" type="image/png" href="http://assets.letemps.ch/themes/custom/letemps/favicons/favicon-16x16.png" sizes="16x16" />
+	    <link rel="icon" type="image/png" href="http://assets.letemps.ch/themes/custom/letemps/favicons/favicon-128.png" sizes="128x128" />
+	    <meta name="application-name" content="&nbsp;"/>
+	    <meta name="msapplication-TileColor" content="#FFFFFF" />
+	    <meta name="msapplication-TileImage" content="http://assets.letemps.ch/themes/custom/letemps/favicons/mstile-144x144.png" />
+	    <meta name="msapplication-square70x70logo" content="http://assets.letemps.ch/themes/custom/letemps/favicons/mstile-70x70.png" />
+	    <meta name="msapplication-square150x150logo" content="http://assets.letemps.ch/themes/custom/letemps/favicons/mstile-150x150.png" />
+	    <meta name="msapplication-wide310x150logo" content="http://assets.letemps.ch/themes/custom/letemps/favicons/mstile-310x150.png" />
+	    <meta name="msapplication-square310x310logo" content="http://assets.letemps.ch/themes/custom/letemps/favicons/mstile-310x310.png" />
+
+	    <meta property="og:title" content="Le Temps de s'engager" />
+		<meta property="og:image" content="{{ app.base_url ~ app.base_path }}/img/share/social.jpg" />
+		<meta property="og:url" content="{{ app.url }}" />
+		<meta property="og:description" content="Pour ses 20 ans, l'âge où l'on s'engage, «Le Temps» se donne une mission" />
+		<meta property="og:type" content="article" />
+		<meta property="fb:app_id" content="100160886777903" />
+		<meta name="twitter:image" content="{{ app.base_url ~ app.base_path }}/img/share/social.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@letemps" />
+		<meta name="twitter:title" content="Le Temps de s'engager" />
+		<meta name="twitter:description" content="Pour ses 20 ans, l'âge où l'on s'engage, «Le Temps» se donne une mission" />
+		<link rel="image_src" href="{{ app.base_url ~ app.base_path }}/img/share/social.jpg" />
+
 		<script id="event-template" type="text/x-handlebars-template">
 		{% verbatim %}
 			{{#each post}}
-				<a href="#" class="event premium y2018">
+				<div class="event premium y2018 {{#testIfPastEventClass custom_fields.event_date }}{{/testIfPastEventClass}}" data-date="{{#testIfPastEventOrder custom_fields.event_date }}{{/testIfPastEventOrder}}" data-title="{{slug}}">
 					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
 						<div class="card-header mdl-card__title" style="background: url('{{thumbnail_images.et-pb-post-main-image-fullwidth.url}}')">
-							<span class="card-chip mdl-chip premium-is-{{custom_fields.event_is_premium}}">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span>
+							{{#checkIfPremium custom_fields.event_is_premium }}{{/checkIfPremium}}
 							<div class="card-overlay">
 								<h1 class="card-title mdl-card__title-text">{{title}}</h1>
 							</div>
 							
 						</div>
 						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>{{custom_fields.event_date}}</span><span class="card-meta--tag">#{{categories.0.title}}</span></span>
+
+
+
+					
+
+							<span class="card-meta"><span class""card-meta--date>{{#formatDate custom_fields.event_date }}{{/formatDate}}</span><span class="card-meta--tag">#{{categories.0.title}}</span></span>
 							{{custom_fields.event_desc}}
 						</div>
+
 						<div class="card-footer mdl-card__supporting-text">
+							<a href="{{custom_fields.event_url}}" target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+						      Plus d'infos
+						    </a>
+							<!--{{{custom_fields.event_where}}}-->
 							
-							{{{custom_fields.event_where}}}
-							
+							<a href="{{custom_fields.event_google_map_url}}" target="_blank" id="card-nav-menu-{{id}}" class="nav-menu mdl-button mdl-js-button mdl-button--icon">
+							  <i class="material-icons">location_on</i>
+							</a>
 							<button id="card-share-menu-{{id}}" class="share-menu mdl-button mdl-js-button mdl-button--icon">
 							  <i class="material-icons">share</i>
 							</button>
@@ -53,7 +96,7 @@
 							</ul>
 						</div>
 					</div>
-				</a>
+				</div>
 			{{/each}}
 		{% endverbatim %}
 		</script>
@@ -109,7 +152,7 @@
 					<div class="hello-form--filters-wrapper--box ">
 							<fieldset data-filter-group data-logic="and">
 						    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						    <input class="mdl-textfield__input" type="text" id="sample3" data-search-attribute="class">
+						    <input class="mdl-textfield__input" type="text" id="sample3" data-search-attribute="data-title">
 						    <label class="mdl-textfield__label" for="sample3"><i class="material-icons">search</i><span style="position: absolute; top: 2px;">Rechercher un terme</span></label>
 						    </div>
 						  </fieldset>

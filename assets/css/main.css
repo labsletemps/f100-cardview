@@ -300,25 +300,31 @@ header {
   @media (max-width: 576px) {
     .grid {
       max-width: 95%; } }
-  .grid a.event {
+  .grid div.event {
     width: 31.33332%;
     margin-right: 1%;
     margin-left: 1%;
     float: lefT;
     margin-bottom: 30px;
-    cursor: pointer;
     overflow: visible; }
     @media (max-width: 768px) {
-      .grid a.event {
+      .grid div.event {
         margin-bottom: 15px;
         width: 48%; } }
     @media (max-width: 576px) {
-      .grid a.event {
+      .grid div.event {
         margin-right: 0;
         margin-left: 0;
         width: 100%; } }
-    .grid a.event:hover {
-      opacity: 0.85; }
+    .grid div.event.is-passed {
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      filter: gray;
+      opacity: 0.75; }
+      .grid div.event.is-passed:hover {
+        opacity: 1; }
 
 .card {
   width: auto !important;
@@ -433,13 +439,25 @@ header {
     bottom: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     font-family: Roboto;
-    overflow: visible !important; }
+    overflow: visible !important;
+    padding: 8px 16px; }
+    @media (max-width: 576px) {
+      .card .card-footer {
+        padding: 7px 16px; } }
     .card .card-footer .share-menu {
       float: right;
       padding-left: 13px;
       padding-top: 12px;
       position: absolute;
       right: 16px;
+      top: 50%;
+      transform: translateY(-50%); }
+    .card .card-footer .nav-menu {
+      float: right;
+      padding-left: 13px;
+      padding-top: 12px;
+      position: absolute;
+      right: 50px;
       top: 50%;
       transform: translateY(-50%); }
 
@@ -639,5 +657,8 @@ footer {
   color: yellow !important;
   display: none !important;
   visibility: hidden !important; }
+
+.mdl-button--colored {
+  color: #b80021 !important; }
 
 /*# sourceMappingURL=main.css.map */

@@ -6,10 +6,8 @@ jQuery(document).ready(function($)
 {
 
     //Google API
-    // DATE
-    // lieu Ailleurs
-    // Menu avec s'y rendre et partager
-    // Bouton dans la barre du bas
+    // mettre les bonne classe
+    // partage
 
     $.getJSON( "http://efbuthzk.preview.infomaniak.website/?json=1&post_type=events&callback=?", function( data ) {
        
@@ -34,8 +32,95 @@ jQuery(document).ready(function($)
         preventLinkBehavior();
     }
 
+    Handlebars.registerHelper('checkIfPremium', function(value, options) {
+        if ( value == '1')
+        {
+            var badgeReturned = '<span class="card-chip mdl-chip"><span class="card-chip__text mdl-chip__text">Premium</span></span>'
+        }
+        return badgeReturned;
+    })
 
+    
+    var d = new Date();
+    var month = d.getMonth()+1;
+    var day = d.getDate();
+    var today = d.getFullYear() + 
+        (month<10 ? '0' : '') + month + 
+        (day<10 ? '0' : '') + day;
+    
 
+    Handlebars.registerHelper('testIfPastEventOrder', function(value, options) {
+        var dateIndex = value;
+        if (parseInt(today) > value)
+        {
+            dateIndex = parseInt(value) + 10000000;
+        }
+        return dateIndex;
+    })
+
+    Handlebars.registerHelper('testIfPastEventClass', function(value, options) {
+        var datePassedClass = value;
+        if (parseInt(today) > value)
+        {
+            datePassedClass = 'is-passed';
+        }
+        else
+        {
+            datePassedClass = '';
+        }
+        return datePassedClass;
+    })
+
+    Handlebars.registerHelper('formatDate', function(value, options) {
+        
+        var year = String(value).slice(0, 4);
+        var month = String(value).slice(4, 6);
+        switch(month) {
+            case '01':
+                month = 'janvier';
+                break;
+            case '02':
+                month = 'février';
+                break;
+            case '03':
+                month = 'mars';
+                break;
+            case '04':
+                month = 'avril';
+                break;
+            case '05':
+                month = 'mai';
+                break;
+            case '06':
+                month = 'juin';
+                break;
+            case '07':
+                month = 'juillet';
+                break;
+            case '08':
+                month = 'août';
+                break;
+            case '09':
+                month = 'septembre';
+                break;
+            case '10':
+                month = 'octobre';
+                break;
+            case '11':
+                month = 'novembre';
+                break;
+            case '12':
+                month = 'décembre';
+                break;
+            default:
+                break;
+        }
+        var day = String(value).slice(6, 8);
+        
+        var dateReturned = day + ' ' + month + ' ' + year; 
+
+        return dateReturned;
+    })
 
     var tlIntroduction =  new TimelineMax({ paused: false });
     var $overlay = $('.overlay');
@@ -146,7 +231,8 @@ jQuery(document).ready(function($)
                "effects": "fade translateZ(-100px)"
             },
             load: {
-                filter: getSelectorFromHash()
+                filter: getSelectorFromHash(),
+                sort: 'date:asc'
             },
             callbacks: {
                 onMixStart: function() {
