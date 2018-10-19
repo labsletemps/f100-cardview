@@ -1,13 +1,17 @@
 /*eslint-env jquery*/
 /*global mixitup*/
 /*global ScrollMagic*/
+/*global Handlebars*/
+
 
 jQuery(document).ready(function($)
 {
 
     //Google API
-    // mettre les bonne classe
+    // Problème avec search url
     // partage
+    // Générer filtres ?
+    //icon partage ? <i class="material-icons md-18">face</i>
 
     $.getJSON( "http://efbuthzk.preview.infomaniak.website/?json=1&post_type=events&callback=?", function( data ) {
        
@@ -29,6 +33,7 @@ jQuery(document).ready(function($)
         $(".grid").html(html);
 
         initMixer();
+        hideOverlay()
         preventLinkBehavior();
     }
 
@@ -57,6 +62,35 @@ jQuery(document).ready(function($)
         }
         return dateIndex;
     })
+
+
+
+    Handlebars.registerHelper('givesEventPremium', function(value, options) {
+        if (value == '1')
+        {
+            var givesEventPremium = 'premium'; 
+        }
+        else
+        {
+            var givesEventPremium = 'not-premium'; 
+        }
+        return givesEventPremium;
+    })
+
+    Handlebars.registerHelper('givesEventCategory', function(value, options) {
+        var givesEventCategory = value;
+        return givesEventCategory;
+    })
+
+
+    Handlebars.registerHelper('givesEventYear', function(value, options) {
+        var givesEventYear = 'y' + String(value).slice(0, 4);
+        return givesEventYear;
+    })
+
+
+
+
 
     Handlebars.registerHelper('testIfPastEventClass', function(value, options) {
         var datePassedClass = value;
@@ -122,11 +156,15 @@ jQuery(document).ready(function($)
         return dateReturned;
     })
 
-    var tlIntroduction =  new TimelineMax({ paused: false });
-    var $overlay = $('.overlay');
-
-    tlIntroduction
-        .to($overlay, 0.5, {autoAlpha: 0, ease:Linear.easeNone}, '-=0.0'); 
+    function hideOverlay(){
+        var tlIntroduction =  new TimelineMax({ paused: false });
+        var $overlay = $('.overlay');
+        var $spinner = $overlay.find('.spinner');
+        tlIntroduction
+            .to($spinner, 0.5, {autoAlpha: 0, ease:Linear.easeNone}, '-=0.0')
+            .to($overlay, 0.5, {autoAlpha: 0, ease:Linear.easeNone}, '-=0.0'); 
+    }
+    
        
 
     //Pour ne pas générer une erreur de formulaire dans le cas d'un ENTER dans le champ email
@@ -237,6 +275,7 @@ jQuery(document).ready(function($)
             callbacks: {
                 onMixStart: function() {
                     stylePagination();
+                    hideErrorMessage();
                 },
                 onMixEnd: setHash,
                 onMixFail: function() {

@@ -57,7 +57,7 @@
 		<script id="event-template" type="text/x-handlebars-template">
 		{% verbatim %}
 			{{#each post}}
-				<div class="event premium y2018 {{#testIfPastEventClass custom_fields.event_date }}{{/testIfPastEventClass}}" data-date="{{#testIfPastEventOrder custom_fields.event_date }}{{/testIfPastEventOrder}}" data-title="{{slug}}">
+				<div class="event {{#givesEventPremium custom_fields.event_is_premium }}{{/givesEventPremium}} {{#givesEventCategory categories.0.slug }}{{/givesEventCategory}} {{#givesEventYear custom_fields.event_date }}{{/givesEventYear}} {{#testIfPastEventClass custom_fields.event_date }}{{/testIfPastEventClass}}" data-date="{{#testIfPastEventOrder custom_fields.event_date }}{{/testIfPastEventOrder}}" data-title="{{slug}}">
 					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
 						<div class="card-header mdl-card__title" style="background: url('{{thumbnail_images.et-pb-post-main-image-fullwidth.url}}')">
 							{{#checkIfPremium custom_fields.event_is_premium }}{{/checkIfPremium}}
@@ -66,12 +66,7 @@
 							</div>
 							
 						</div>
-						<div class="card-desc mdl-card__supporting-text">
-
-
-
-					
-
+						<div class="card-desc mdl-card__supporting-text">					
 							<span class="card-meta"><span class""card-meta--date>{{#formatDate custom_fields.event_date }}{{/formatDate}}</span><span class="card-meta--tag">#{{categories.0.title}}</span></span>
 							{{custom_fields.event_desc}}
 						</div>
@@ -103,7 +98,14 @@
 	</head>  
  
 	<body style="padding-top: {{ navBarOffset }};">
-		<div class="overlay"></div>
+		<div class="overlay">
+			{# <span class="spinner-wrapper"> #}
+			<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+   				<circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+			</svg>
+			{# </span> #}
+			{# <p>Chargement des événements</p> #}
+		</div>
 
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQ2B8Q"
@@ -150,7 +152,7 @@
 					<button hidden class="reset "type="reset">reset</button>
 
 					<div class="hello-form--filters-wrapper--box ">
-							<fieldset data-filter-group data-logic="and">
+							<fieldset data-filter-group="searchbox" data-logic="and">
 						    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						    <input class="mdl-textfield__input" type="text" id="sample3" data-search-attribute="data-title">
 						    <label class="mdl-textfield__label" for="sample3"><i class="material-icons">search</i><span style="position: absolute; top: 2px;">Rechercher un terme</span></label>
@@ -187,7 +189,7 @@
 						        	<li hidden class="mdl-menu__item" data-filter=""></li>
 						            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider" data-val="cat-all" data-filter="">Tous</li>
 						            <li class="mdl-menu__item" data-filter=".premium">Oui</li>
-						            <li class="mdl-menu__item" data-filter=".free">Non</li>
+						            <li class="mdl-menu__item" data-filter=".not-premium">Non</li>
 						        </ul>
 						    </div>
 						</fieldset>
@@ -215,480 +217,6 @@
 			</div>
 
 			<div class="grid">
-
-				
-
-				<!-- <a href="#" class="event free y2018">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span> 
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 1</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							<h1 class="card-title card-title-mobile">Concert des soeurs Berthollet</h1>
-							<span class="desc-txt">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...</span>
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="demo-menu-top-right" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="demo-menu-top-right">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a>
-
-				<a href="#" class="event premium y2018">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span>
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 2</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="card-share-menu-i" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="card-share-menu-i">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a>
-
-				<a href="#" class="event free y2017">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span> 
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 3</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							<h1 class="card-title card-title-mobile">Concert des soeurs Berthollet</h1>
-							<span class="desc-txt">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...</span>
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="demo-menu-top-right" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="demo-menu-top-right">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a>
-
-				<a href="#" class="event premium y2017">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span>
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 4</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="card-share-menu-i" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="card-share-menu-i">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a>
-
-				<a href="#" class="event free y2016">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span> 
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 5</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							<h1 class="card-title card-title-mobile">Concert des soeurs Berthollet</h1>
-							<span class="desc-txt">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...</span>
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="demo-menu-top-right" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="demo-menu-top-right">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a>
-
-				<a href="#" class="event premium y2016">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span>
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 6</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="card-share-menu-i" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="card-share-menu-i">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a>
-
-				<a href="#" class="event premium y2016">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span>
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 6</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="card-share-menu-i" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="card-share-menu-i">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a>
-
-				<a href="#" class="event premium y2016">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span>
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 6</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="card-share-menu-i" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="card-share-menu-i">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a>
-
-				<a href="#" class="event premium y2016">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span>
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 6</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="card-share-menu-i" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="card-share-menu-i">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a>
-
-				<a href="#" class="event premium y2016">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span>
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 6</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="card-share-menu-i" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="card-share-menu-i">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a>
-
-				<a href="#" class="event premium y2016">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span>
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 6</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="card-share-menu-i" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="card-share-menu-i">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a>
-
-				<a href="#" class="event premium y2016">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span>
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 6</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="card-share-menu-i" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="card-share-menu-i">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a>
-
-				<a href="#" class="event premium y2016">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span>
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 6</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="card-share-menu-i" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="card-share-menu-i">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a>
-
-				<a href="#" class="event premium y2016">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span>
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 6</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="card-share-menu-i" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="card-share-menu-i">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a>
-
-				<a href="#" class="event premium y2016">
-					<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="https://www.letemps.ch">
-						<div class="card-header mdl-card__title" style="background: url('img/article/berthollet.jpg')">
-							<span class="card-chip mdl-chip">
-							    <span class="card-chip__text mdl-chip__text">Premium</span>
-							</span>
-							<div class="card-overlay">
-								<h1 class="card-title mdl-card__title-text style="background: url('img/article/berthollet.jpg')>Concert des soeur Berthollet 6</h1>
-							</div>
-							
-						</div>
-						<div class="card-desc mdl-card__supporting-text">
-							<span class="card-meta"><span class""card-meta--date>13 février 2018</span><span class="card-meta--tag">#concert</span></span>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Mauris sagittis pellentesque lacus eleifend lacinia...
-						</div>
-						<div class="card-footer mdl-card__supporting-text">
-							Rédaction du Temps, <b>Lausanne</b>
-							<button id="card-share-menu-i" class="share-menu mdl-button mdl-js-button mdl-button--icon">
-							  <i class="material-icons">share</i>
-							</button>
-							<ul class="grid--event--share mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect share-menu--content"
-							    data-mdl-for="card-share-menu-i">
-							  <li class="mdl-menu__item">Facebook</li>
-							  <li class="mdl-menu__item">Twitter</li>
-							  <li class="mdl-menu__item">Linkedin</li>
-							</ul>
-						</div>
-					</div>
-				</a> -->
-
 			</div>
 
 			<div class="error-message">

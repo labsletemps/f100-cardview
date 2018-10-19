@@ -1,3 +1,5 @@
+$offset: 187;
+$duration: 1.4s;
 .overlay 
 {
 	position: fixed;
@@ -5,6 +7,59 @@
 	width: 100%;
 	background: white;
 	z-index: 100;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+  .spinner-wrapper
+  {
+    transform: scale(0.5);
+  }
+  
+  .spinner 
+  {
+    position: absolute;
+    // top: 50%;
+    // left: 50%;
+    //transform: translate(-50% -50%);
+    animation: rotator $duration linear infinite;
+    transform: scale(0.5);
+  }
+
+  .path 
+  {
+    stroke-dasharray: $offset;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation:
+    dash $duration ease-in-out infinite, 
+    colors ($duration*4) ease-in-out infinite;
+  }
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+@keyframes colors {
+  0% { stroke: $letemps-color-1; }
+  25% { stroke: $letemps-color-1; }
+  50% { stroke: $letemps-color-1; }
+  75% { stroke: $letemps-color-1; }
+  100% { stroke: $letemps-color-1; }
+}
+
+@keyframes dash {
+ 0% { stroke-dashoffset: $offset; }
+ 50% {
+   stroke-dashoffset: $offset/4;
+   transform:rotate(135deg);
+ }
+ 100% {
+   stroke-dashoffset: $offset;
+   transform:rotate(450deg);
+ }
 }
 
 .mixitup-page-list
