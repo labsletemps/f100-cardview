@@ -24,6 +24,7 @@
       margin-bottom: 30px;
       //cursor: pointer;
       overflow: visible;
+      //display: block !important;
 
       @include breakpoint(md) {
          margin-bottom: 15px;

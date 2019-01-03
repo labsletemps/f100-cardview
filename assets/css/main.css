@@ -579,7 +579,8 @@ footer {
     padding: 25px; }
     footer .footer-bottom ul {
       display: block;
-      text-align: center; }
+      text-align: center;
+      padding: 0 50px; }
       footer .footer-bottom ul li {
         display: inline-block;
         font-family: tungsten;

@@ -217,8 +217,10 @@ jQuery(document).ready(function($)
     var targetSelector = '.event';
 
     function getSelectorFromHash() {
-        var hash = window.location.hash.replace(/^#/g, '');
-        var selector = hash ? '.' + hash : targetSelector;
+        var pathname = window.location.pathname.replace(/^.+\/index\.php\/?|\/|\/?evenements\-staging\/?|\/?evenements\/?/g, '');
+        pathname = pathname.split('/').join('.');
+
+        var selector = pathname ? '.' + pathname : targetSelector;
         //var parsedSelector = selector.split('.');
         // console.log('selector =' + selector);
         // console.log('parsed selector =' + parsedSelector[1]);
@@ -228,20 +230,38 @@ jQuery(document).ready(function($)
         //   console.log('.' + parsedSelector[i]);
         //   $('li.' + parsedSelector[i]).remove();
         // }
-
         return selector;
 
     }
 
     function setHash(state) {
         var selector = state.activeFilter.selector;
-        var newHash = '#' + selector.replace(/^\./g, '');
-        if (selector === targetSelector && window.location.hash) {
+
+        parts = selector.split('.');
+        for (var i = parts.length - 1; i >= 0; i--) {
+            if(parts[i].indexOf('data-title') > -1 || parts[i].indexOf('event') > -1) {
+                delete parts[i];
+            }
+        }
+        parts = parts.filter(function(el){ return el !== null; });
+        selector = parts.join('.');
+
+        console.log(selector);
+
+        var newPathName = selector.replace(/\./g, '/');
+        if (selector === targetSelector) {
             // Equivalent to filter "all", remove the hash
-            history.pushState(null, document.title, window.location.pathname); // or history.replaceState()
-        } else if (newHash !== window.location.hash && selector !== targetSelector) {
+            history.pushState(null, document.title, window.location.origin); // or history.replaceState()
+        } else if (newPathName !== window.location.pathname && selector !== targetSelector) {
             // Change the hash
-            history.pushState(null, document.title, window.location.pathname + newHash); // or history.replaceState()
+            var folder = '';
+            if (window.location.href.indexOf('evenements') > -1) {
+                folder = '/evenements';
+            }
+            if (window.location.href.indexOf('evenements-staging') > -1) {
+                folder = '/evenements-staging';
+            }
+            history.pushState(null, document.title, window.location.protocol + '//' + window.location.host + folder + '/index.php' + newPathName); // or history.replaceState()
         }
 
         stylePagination();
@@ -258,7 +278,7 @@ jQuery(document).ready(function($)
                  target: '.event'
             },
              pagination: {
-                 limit: 6, 
+                 limit: 12, 
                  hidePageListIfSinglePage: true
              },
             animation: {
