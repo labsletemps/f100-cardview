@@ -14,7 +14,7 @@ jQuery(document).ready(function($)
     //icon partage ? <i class="material-icons md-18">face</i>
 
     $.getJSON( "http://efbuthzk.preview.infomaniak.website/?json=1&post_type=events&callback=?", function( data ) {
-       
+
         //console.log(data);
 
         displayEvents(data);
@@ -22,7 +22,7 @@ jQuery(document).ready(function($)
         // $.each(data.posts, function(i, obj) {
         //  alert(data.posts[i].slug);
         // });
-     
+
     });
 
     function displayEvents(data){
@@ -45,14 +45,14 @@ jQuery(document).ready(function($)
         return badgeReturned;
     })
 
-    
+
     var d = new Date();
     var month = d.getMonth()+1;
     var day = d.getDate();
-    var today = d.getFullYear() + 
-        (month<10 ? '0' : '') + month + 
+    var today = d.getFullYear() +
+        (month<10 ? '0' : '') + month +
         (day<10 ? '0' : '') + day;
-    
+
 
     Handlebars.registerHelper('testIfPastEventOrder', function(value, options) {
         var dateIndex = value;
@@ -68,11 +68,11 @@ jQuery(document).ready(function($)
     Handlebars.registerHelper('givesEventPremium', function(value, options) {
         if (value == '1')
         {
-            var givesEventPremium = 'premium'; 
+            var givesEventPremium = 'premium';
         }
         else
         {
-            var givesEventPremium = 'not-premium'; 
+            var givesEventPremium = 'not-premium';
         }
         return givesEventPremium;
     })
@@ -106,7 +106,7 @@ jQuery(document).ready(function($)
     })
 
     Handlebars.registerHelper('formatDate', function(value, options) {
-        
+
         var year = String(value).slice(0, 4);
         var month = String(value).slice(4, 6);
         switch(month) {
@@ -150,8 +150,8 @@ jQuery(document).ready(function($)
                 break;
         }
         var day = String(value).slice(6, 8);
-        
-        var dateReturned = day + ' ' + month + ' ' + year; 
+
+        var dateReturned = day + ' ' + month + ' ' + year;
 
         return dateReturned;
     })
@@ -162,10 +162,10 @@ jQuery(document).ready(function($)
         var $spinner = $overlay.find('.spinner');
         tlIntroduction
             .to($spinner, 0.5, {autoAlpha: 0, ease:Linear.easeNone}, '-=0.0')
-            .to($overlay, 0.5, {autoAlpha: 0, ease:Linear.easeNone}, '-=0.0'); 
+            .to($overlay, 0.5, {autoAlpha: 0, ease:Linear.easeNone}, '-=0.0');
     }
-    
-       
+
+
 
     //Pour ne pas générer une erreur de formulaire dans le cas d'un ENTER dans le champ email
     $('#mc-embedded-subscribe-form').keyup(function (e) {
@@ -173,7 +173,7 @@ jQuery(document).ready(function($)
         if ( e.which == 13 ) {
              $('.newsletter-submit.mdl-button').focus();
           }
-    }); 
+    });
 
    //Ce bouton Google material trigger le bouton mailchimp qui est caché
     $('.newsletter-submit').click(function (e) {
@@ -181,21 +181,21 @@ jQuery(document).ready(function($)
         $( "#mc-embedded-subscribe" ).trigger( "click" );
         return false;
 
-    }); 
-    
+    });
+
     //Empèche le link quand on share une carte
     function preventLinkBehavior(){
         $('.grid button.mdl-js-button').click(function (e) {
             e.stopPropagation();
             return false;
-        });  
+        });
     }
-    
+
 
     //JS link on promo bloc
     $('button.promo--button').click(function (e) {
         window.open(' https://boutique.letemps.ch/abonnements', '_blank');
-    }); 
+    });
 
     //Pagination is stick on mobile
     var controller = new ScrollMagic.Controller();
@@ -208,7 +208,7 @@ jQuery(document).ready(function($)
         //.addIndicators({name: "PAGE LIST PINNED"}) // add indicators (requires plugin)
         .addTo(controller);
 
-   
+
 
     //-------------------------------------------------------------------------------------//
     //  MIXITUP CONFIG
@@ -217,16 +217,16 @@ jQuery(document).ready(function($)
     var targetSelector = '.event';
 
     function getSelectorFromHash() {
-        var pathname = window.location.pathname.replace(/^.+\/index\.php\/?|\/|\/?evenements\-staging\/?|\/?evenements\/?/g, '');
+        var pathname = ''; // window.location.pathname.replace(/^.+\/index\.php\/?|\/|\/?evenements\-staging\/?|\/?evenements\/?/g, '');
         pathname = pathname.split('/').join('.');
 
         var selector = pathname ? '.' + pathname : targetSelector;
         //var parsedSelector = selector.split('.');
         // console.log('selector =' + selector);
         // console.log('parsed selector =' + parsedSelector[1]);
-        
+
         //console.log(parsedSelector.length);
-        // for(i = 1; i < parsedSelector.length; i++) { 
+        // for(i = 1; i < parsedSelector.length; i++) {
         //   console.log('.' + parsedSelector[i]);
         //   $('li.' + parsedSelector[i]).remove();
         // }
@@ -278,7 +278,7 @@ jQuery(document).ready(function($)
                  target: '.event'
             },
              pagination: {
-                 limit: 12, 
+                 limit: 12,
                  hidePageListIfSinglePage: true
              },
             animation: {
@@ -318,11 +318,11 @@ jQuery(document).ready(function($)
 
     var $errorMessage = $('.error-message');
     var $resetFiltersButton = $('button.reset-filters');
-    
+
 
     $($resetFiltersButton).click(function (e) {
        resetUi();
-    }); 
+    });
 
     hideErrorMessage();
     function hideErrorMessage(){
@@ -332,24 +332,24 @@ jQuery(document).ready(function($)
     function showErrorMessage(){
          $errorMessage.fadeIn();
     }
-    
+
     function resetUi(){
         $("form").each(function() {
           $(this).find( ".reset" ).trigger( "click" );
           $(this).find( "ul li:first-child" ).trigger( "click" );
         });
-       
+
         $('.mdl-textfield').removeClass('is-dirty');
         setTimeout(function(){ hideErrorMessage(); }, 1000);
     }
 
     var uiScrolling = false;
     function scrollToTop(){
-        if (uiScrolling == true) 
+        if (uiScrolling == true)
         {
 
         }
-        else 
+        else
         {
             uiScrolling = true;
             $('html, body').animate({
@@ -359,7 +359,7 @@ jQuery(document).ready(function($)
                     //console.log('hello');
             });
         }
-       
+
     }
 
 });
