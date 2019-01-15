@@ -7,8 +7,15 @@
 		"uuidString": "3187371A-6B72-4F4B-AF56-6FC65DC500E1"
 		}
 	],
-"creatorBuild": "28901",
+"creatorBuild": "28905",
 "files": {
+	"/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "/.gitignore",
+		"oF": 0
+		},
 	"/assets/css/getmdl-select.min-min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -486,6 +493,16 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/assets/js/isInViewport.min-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/js/isInViewport.min-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/assets/js/isInViewport.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -556,6 +573,26 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/assets/js/mixitup-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/js/mixitup-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/assets/js/mixitup-multifilter-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/js/mixitup-multifilter-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/assets/js/mixitup-multifilter.js": {
 		"ft": 64,
 		"ma": 0,
@@ -586,6 +623,16 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/assets/js/mixitup-pagination.min-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/js/mixitup-pagination.min-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/assets/js/mixitup-pagination.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -602,6 +649,16 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/assets/js/mixitup-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/assets/js/mixitup.min-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/js/mixitup.min-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1954,6 +2011,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/img/article/berthollet-good.jpg": {
+		"ft": 16384,
+		"iS": 2378815,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/img/article/berthollet-good.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/img/article/berthollet.jpg": {
 		"ft": 16384,
 		"iS": 2378815,
@@ -2697,6 +2765,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/img/share/social2.jpg": {
+		"ft": 16384,
+		"iS": 53876,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/img/share/social2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/img/tilt-fioul-lourd.jpg": {
 		"ft": 16384,
 		"iS": 36612,
@@ -2736,10 +2815,33 @@
 		"oAP": "/indexH.php",
 		"oF": 0
 		},
+	"/indexLT.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "/indexLT.php",
+		"oF": 0
+		},
 	"/json/data.json": {
 		"ft": 524288,
 		"oA": 1,
 		"oAP": "/json/data-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/json/export.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/json/export-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/json/sample.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/json/sample-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -7240,8 +7342,8 @@
 	},
 "projectAttributes": {
 	"creationDate": 524261802,
-	"displayValue": "lt-event",
-	"displayValueWasSetByUser": 0,
+	"displayValue": "f100-cardview",
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-krieger",
 	"iconImageWasSetByUser": 0
 	},
@@ -8648,9 +8750,9 @@
 			}
 		},
 	"esLintSourceType": 0,
-	"externalServerAddress": "http://localhost:8888/lt-event",
+	"externalServerAddress": "http://localhost/~rnp/f100-cardview/index.php",
 	"gitIgnoreBuildFolder": 1,
-	"hideConfigFile": 0,
+	"hideConfigFile": 1,
 	"jsCheckerReservedNamesString": "TimelineMax",
 	"jsHintFlags2": {
 		"asi": {
