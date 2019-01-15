@@ -328,7 +328,7 @@ header {
 
 .card {
   width: auto !important;
-  height: 380px;
+  height: 300px;
   position: relative;
   overflow: visible !important; }
   @media (max-width: 576px) {

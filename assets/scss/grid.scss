@@ -13,7 +13,7 @@
 
     @include breakpoint(sm) {
        max-width: 95%;
-    } 
+    }
 
     div.event
     {
@@ -37,7 +37,7 @@
         width: 100%;
       }
 
-      &:hover 
+      &:hover
       {
         //opacity: 0.85;
       }
@@ -49,7 +49,7 @@
         -moz-filter:    grayscale(100%);
         -ms-filter:     grayscale(100%);
         -o-filter:      grayscale(100%);
-        filter: gray; 
+        filter: gray;
 
         opacity: 0.75;
 
@@ -61,10 +61,10 @@
     }
 }
 
-.card 
+.card
 {
   width: auto !important;
-  height: 380px;
+  height: 300px;
   position: relative;
   overflow: visible !important;
 
@@ -74,7 +74,7 @@
     min-height: 0!important;
   }
 
-  .card-header 
+  .card-header
   {
     color: #fff;
     height: 176px;
@@ -103,7 +103,7 @@
     background: #58b59a;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top right, #749e92, #2be2ad);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top right, #749e92, #2be2ad); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+
     &.premium-is-0 { display: none; visibility: hidden; }
 
     @include breakpoint(sm) {
@@ -116,7 +116,7 @@
     }
 
     .card-chip__text
-    { 
+    {
         font-size: 10px;
         color: white;
         line-height: 34px;
@@ -144,7 +144,7 @@
       }
     }
 
-  .card-meta 
+  .card-meta
     {
         display: block;
         width: 100%;
@@ -166,8 +166,8 @@
     color: white !important;
     font-size: 20px !important;
     z-index: 10;
-    -webkit-font-smoothing: antialiased; 
-    -moz-osx-font-smoothing: grayscale; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     font-weight: 500 !important;
 
@@ -181,12 +181,12 @@
         display: block;
       }
     }
-    
+
   }
 
   .card-desc
   {
-    color: #4e4e4e !important; 
+    color: #4e4e4e !important;
     width: 100% !important;
 
     @include breakpoint(sm) {
@@ -212,7 +212,7 @@
     display: block;
   }
 
-  .card-footer 
+  .card-footer
   {
     width: 100% !important;
     position: absolute;
@@ -225,8 +225,8 @@
     @include breakpoint(sm) {
       padding: 7px 16px;
     }
-    
-    .share-menu 
+
+    .share-menu
     {
       float: right;
       //height: 100%;
@@ -238,7 +238,7 @@
       transform: translateY(-50%);
     }
 
-    .nav-menu 
+    .nav-menu
     {
       float: right;
       //height: 100%;
@@ -251,5 +251,3 @@
     }
   }
 }
-
-
