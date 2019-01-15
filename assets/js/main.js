@@ -13,9 +13,6 @@ jQuery(document).ready(function($)
     // Générer filtres ?
     //icon partage ? <i class="material-icons md-18">face</i>
 
-    // https://labs.letemps.ch/interactive/2018/_archives_f100/_f100-2019-preview/data/f100_bridge.php
-    // http://localhost/~rnp/_lab/f100_bridge.php
-    //$.getJSON( "https://sheets.googleapis.com/v4/spreadsheets/18Jd5UrdYXOr1CEpTU9qzsxDHEnlhE0o5b5OL3buepHk/values/A7:L105?key=AIzaSyDUR2B07e6TGonmFjLIqbEr8yxiYf7SA4k", function( data ) {
     $.getJSON( "http://web.tcch.ch/tv-test/f100_get.php?7", function( data ) {
       var items = [];
       var columns = data['values'].shift();
