@@ -13,20 +13,44 @@ jQuery(document).ready(function($)
     // Générer filtres ?
     //icon partage ? <i class="material-icons md-18">face</i>
 
-    $.getJSON( "http://efbuthzk.preview.infomaniak.website/?json=1&post_type=events&callback=?", function( data ) {
+    // https://labs.letemps.ch/interactive/2018/_archives_f100/_f100-2019-preview/data/f100_bridge.php
+    // http://localhost/~rnp/_lab/f100_bridge.php
+    //$.getJSON( "https://sheets.googleapis.com/v4/spreadsheets/18Jd5UrdYXOr1CEpTU9qzsxDHEnlhE0o5b5OL3buepHk/values/A7:L105?key=AIzaSyDUR2B07e6TGonmFjLIqbEr8yxiYf7SA4k", function( data ) {
+    $.getJSON( "http://web.tcch.ch/tv-test/f100_get.php?7", function( data ) {
+      var items = [];
+      var columns = data['values'].shift();
+      var colNumber = columns.length;
 
-        //console.log(data);
+      data = data['values'].filter(row => row[0] == 1);
 
-        displayEvents(data);
+      $.each(data, function(key, val){
+        item = {'id': key,
+          'status': 'publish'
+        };
+        var rowLength = val.length;
+        for(var i = 0; i < rowLength; i++){
+          item[ columns[i] ] = val[i];
+        }
 
-        // $.each(data.posts, function(i, obj) {
-        //  alert(data.posts[i].slug);
-        // });
+        item['title'] = item['firstname'] + ' ' + item['name'];
+        item['slug'] = item['title'].toLowerCase(); // + ' ' + item['sector'];
 
+        if( (item['storylink']) && (item['storylink'].substring(0, 5) == 'https') )
+        {
+          items.push(item);
+        }
+      });
+
+      var cards = {
+        'count': 10,
+        'count_total': 10,
+        'pages': 1,
+        'posts': items
+      }
+      displayEvents(cards);
     });
 
     function displayEvents(data){
-        console.log(data);
         var source   = $("#event-template").html();
         var template = Handlebars.compile(source);
         var html = template({'post':data.posts});
@@ -246,23 +270,7 @@ jQuery(document).ready(function($)
         parts = parts.filter(function(el){ return el !== null; });
         selector = parts.join('.');
 
-        console.log(selector);
 
-        var newPathName = selector.replace(/\./g, '/');
-        if (selector === targetSelector) {
-            // Equivalent to filter "all", remove the hash
-            history.pushState(null, document.title, window.location.origin); // or history.replaceState()
-        } else if (newPathName !== window.location.pathname && selector !== targetSelector) {
-            // Change the hash
-            var folder = '';
-            if (window.location.href.indexOf('evenements') > -1) {
-                folder = '/evenements';
-            }
-            if (window.location.href.indexOf('evenements-staging') > -1) {
-                folder = '/evenements-staging';
-            }
-            history.pushState(null, document.title, window.location.protocol + '//' + window.location.host + folder + '/index.php' + newPathName); // or history.replaceState()
-        }
 
         stylePagination();
         scrollToTop();
@@ -289,8 +297,8 @@ jQuery(document).ready(function($)
                "effects": "fade translateZ(-100px)"
             },
             load: {
-                filter: getSelectorFromHash(),
-                sort: 'date:asc'
+                // filter: getSelectorFromHash(),
+                //sort: 'date:asc'
             },
             callbacks: {
                 onMixStart: function() {
@@ -356,7 +364,6 @@ jQuery(document).ready(function($)
                 scrollTop:$('.hello-form').offset().top - 20
                 }, function(){
                     uiScrolling = false;
-                    //console.log('hello');
             });
         }
 
