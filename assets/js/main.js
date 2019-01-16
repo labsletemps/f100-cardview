@@ -13,31 +13,64 @@ jQuery(document).ready(function($)
     // Générer filtres ?
     //icon partage ? <i class="material-icons md-18">face</i>
 
-    $.getJSON( "http://web.tcch.ch/tv-test/f100_get.php?7", function( data ) {
+    function stylePagination(){
+        $('.mixitup-page-list').find('button').addClass('mdl-button');
+    }
+
+    // basé sur fcn par naveen: https://stackoverflow.com/questions/4060004/calculate-age-given-the-birth-date-in-the-format-yyyymmdd/7091965#7091965
+    function getAge(dateString) {
+      var prefix = '';
+      if(!dateString){
+        return '??';
+      }else if(dateString.indexOf('/') < 0){
+        prefix = '~';
+      }
+      var today = new Date();
+      var birthDate = new Date(dateString);
+      var age = today.getFullYear() - birthDate.getFullYear();
+      var m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+          age--;
+      }
+      return prefix + String(age);
+    }
+
+    $.getJSON( "http://web.tcch.ch/tv-test/f100_get.php?lastx", function( data ) {
       var items = [];
       var columns = data['values'].shift();
       var colNumber = columns.length;
 
       data = data['values'].filter(row => row[0] == 1);
 
+      data.reverse();
+
+      console.log(data)
+
+      if(window.location.search.indexOf('auteur=') > 0){
+        var author = decodeURI(window.location.search.split('auteur=')[1]);
+        data = data.filter(row => row[colNumber-4].indexOf(author) >= 0);
+      }
+
       $.each(data, function(key, val){
         item = {'id': key,
           'status': 'publish'
         };
         var rowLength = val.length;
+
         for(var i = 0; i < rowLength; i++){
           item[ columns[i] ] = val[i];
         }
 
         item['title'] = item['firstname'] + ' ' + item['name'];
         item['slug'] = item['title'].toLowerCase(); // + ' ' + item['sector'];
+        item['age'] = getAge(item['birthdate']);
 
-        if( (item['storylink']) && (item['storylink'].substring(0, 5) == 'https') )
+        if( (item['storylink']) && (item['storylink'].substring(0, 5) == 'https') && (item['image'].substring(0, 5) == 'https') )
         {
           items.push(item);
         }
-      });
 
+      });
       var cards = {
         'count': 10,
         'count_total': 10,
@@ -45,6 +78,7 @@ jQuery(document).ready(function($)
         'posts': items
       }
       displayEvents(cards);
+      stylePagination();
     });
 
     function displayEvents(data){
@@ -270,7 +304,7 @@ jQuery(document).ready(function($)
 
 
         stylePagination();
-        scrollToTop();
+        // scrollToTop();
     }
 
 
@@ -283,7 +317,7 @@ jQuery(document).ready(function($)
                  target: '.event'
             },
              pagination: {
-                 limit: 12,
+                 limit: 6,
                  hidePageListIfSinglePage: true
              },
             animation: {
@@ -316,9 +350,7 @@ jQuery(document).ready(function($)
         mixer.filter(selector);
     };
 
-    function stylePagination(){
-        $('.mixitup-page-list').find('button').addClass('mdl-button');
-    }
+
     stylePagination();
 
     var $errorMessage = $('.error-message');
