@@ -250,7 +250,6 @@ header {
   max-width: 1000px;
   background: white;
   margin: auto;
-  margin-top: -100px;
   padding: 40px 30px 0 30px;
   height: 260px;
   margin-bottom: 50px; }
@@ -328,7 +327,7 @@ header {
 
 .card {
   width: auto !important;
-  height: 300px;
+  height: 310px;
   position: relative;
   overflow: visible !important; }
   @media (max-width: 576px) {
