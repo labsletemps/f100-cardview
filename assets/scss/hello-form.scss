@@ -4,7 +4,7 @@
     max-width: 1000px;
     background: white;
     margin: auto;
-    margin-top: -100px;
+    margin-top: 100px;
     padding: 40px 30px 0 30px;
     height: 260px;
     margin-bottom: 50px;
@@ -32,25 +32,25 @@
         }
     }
 
-    .hello-form--filters-wrapper 
+    .hello-form--filters-wrapper
     {
-        width: 100%; 
+        width: 100%;
 
         .hello-form--filters-wrapper--box
         {
-            width: 50%;    
+            width: 50%;
             float: left;
 
-            &.margin-negative-top 
+            &.margin-negative-top
             {
                @include breakpoint(sm) {
                      margin-top: -15px;
                 }
-                     
+
             }
 
             &:nth-child(2n+1)
-            { 
+            {
                 padding-left: 0px;
                 //background:red
             }
@@ -63,7 +63,7 @@
             .mdl-textfield
             {
               width: 100%;
-             
+
             }
         }
     }

@@ -4,8 +4,8 @@ header
     background-size: cover !important;
 }
 
-.header-top 
-{  
+.header-top
+{
     height: 110px;
     background: white;
     width: 100%;
@@ -13,11 +13,11 @@ header
 
     @include breakpoint(md) {
        height: 60px;
-    }  
-    
-    
+    }
+
+
     .back-to-letemps
-    { 
+    {
       .share-this-page--text
       {
         opacity: .5;
@@ -32,11 +32,11 @@ header
       top: 50%;
       left: 30px;
       transform: translateY(-50%);
-      
+
        @include breakpoint(md) {
           left: 16px;
       }
-      
+
     }
 
     .share-this-page
@@ -58,7 +58,7 @@ header
       }
     }
 
-    .header-top--container   
+    .header-top--container
     {
       width: 200px;
       position: absolute;
@@ -69,7 +69,7 @@ header
 
       @include breakpoint(md) {
         padding-top: 12px;
-      } 
+      }
 
       .header-top--logo
       {
@@ -81,7 +81,7 @@ header
           @include breakpoint(md) {
              width: 75%;
              margin-bottom: 5px;
-          } 
+          }
       }
 
       .header-top--title
@@ -91,8 +91,8 @@ header
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 5px;
-        -webkit-font-smoothing: antialiased; 
-        -moz-osx-font-smoothing: grayscale; 
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
         font-size: 16px;
         line-height: 20px;
@@ -104,14 +104,13 @@ header
           line-height: 13px;
           letter-spacing: 7px;
           transform: translateX(5px);
-        } 
+        }
       }
     }
 }
 
 .header-figures
 {
-  background: url('../../img/article/berthollet.jpg');
   background-position: center center;
   background-size: cover;
   width: 100%;
@@ -121,11 +120,3 @@ header
       height: 250px;
   }
 }
-
-
-
-
-
-
-
-
