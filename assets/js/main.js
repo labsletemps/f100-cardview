@@ -3,15 +3,13 @@
 /*global ScrollMagic*/
 /*global Handlebars*/
 
+/* TODO
+change dataset
+https://www.kunkalabs.com/mixitup/docs/api-methods/
+*/
 
 jQuery(document).ready(function($)
 {
-
-    //Google API
-    // Problème avec search url
-    // partage
-    // Générer filtres ?
-    //icon partage ? <i class="material-icons md-18">face</i>
 
     function stylePagination(){
         $('.mixitup-page-list').find('button').addClass('mdl-button');
@@ -19,67 +17,108 @@ jQuery(document).ready(function($)
 
     // basé sur fcn par naveen: https://stackoverflow.com/questions/4060004/calculate-age-given-the-birth-date-in-the-format-yyyymmdd/7091965#7091965
     function getAge(dateString) {
+      // bypass for now
+      return '';
+
       var prefix = '';
+      var suffix = ' ans';
       if(!dateString){
-        return '??';
-      }else if(dateString.indexOf('/') < 0){
+        return '';
+      }else if( (dateString.indexOf('/') < 0) && (dateString.indexOf('T00:00:00.000Z') < 0) ){
         prefix = '~';
+        suffix += ''
       }
       var today = new Date();
       var birthDate = new Date(dateString);
       var age = today.getFullYear() - birthDate.getFullYear();
       var m = today.getMonth() - birthDate.getMonth();
       if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-          age--;
+        age--;
       }
-      return prefix + String(age);
+      return prefix + String(age) + suffix;
     }
 
-    $.getJSON( "http://web.tcch.ch/tv-test/f100_get.php?lastx", function( data ) {
-      var items = [];
-      var columns = data['values'].shift();
-      var colNumber = columns.length;
+    loadProfiles('2019');
+    /*setTimeout(function(){
+      var bLazy = new Blazy();
 
-      data = data['values'].filter(row => row[0] == 1);
+      //loadProfiles('archive')
+    }, 1000);*/
 
-      data.reverse();
+    $('#load2019').click(function(){
+      $('.grid, .mixitup-page-list-trigger, .mixitup-page-list is-pinned').html('');
+      loadProfiles('2019');
+    })
 
-      console.log(data)
+    $('#loadArchive').click(function(){
+      loadProfiles('archive');
+    })
+    function loadProfiles(source){
+      if ( source == '2019' ){
+        $.getJSON( "http://web.tcch.ch/tv-test/f100_get.php?lastx", function( data ) {
 
-      if(window.location.search.indexOf('auteur=') > 0){
-        var author = decodeURI(window.location.search.split('auteur=')[1]);
-        data = data.filter(row => row[colNumber-4].indexOf(author) >= 0);
+          var items = [];
+          var columns = data['values'].shift();
+          var colNumber = columns.length;
+
+          data = data['values'].filter( function(item){  return item[0] == 1; });
+          data.reverse();
+
+          if(window.location.search.indexOf('auteur=') > 0){
+            var author = decodeURI(window.location.search.split('auteur=')[1]);
+            data = data.filter( function(item) {
+              return item[colNumber-4].indexOf(author) >= 0;
+            });
+          }
+
+          $.each(data, function(key, val){
+            var item = {'id': key,
+              'status': 'publish'
+            };
+            var rowLength = val.length;
+
+            for(var i = 0; i < rowLength; i++){
+              item[ columns[i] ] = val[i];
+            }
+
+            item['title'] = item['firstname'] + ' ' + item['name'];
+            item['slug'] = (item['title'] + ' ' + item['company'] + ' ' + item['function'] + ' ' + item['sector']).toLowerCase(); // + ' ' + item['sector'];
+            item['age'] = getAge(item['birthdate']);
+            // TODO allow multiple sectors?
+            //var sector_parts = item['sector']
+
+            if( (item['storylink']) && (item['storylink'].substring(0, 5) == 'https') && (item['image'].substring(0, 5) == 'https') )
+            {
+              items.push(item);
+            }
+
+          });
+          var cards = {
+            'count': 10,
+            'count_total': 10,
+            'pages': 1,
+            'posts': items
+          }
+          displayProfiles(cards);
+        });
+      } else if ( source == 'archive' ){
+        $.getJSON( "data/archive.json", function( data ) {
+
+          var cards = {
+            'count': 10,
+            'count_total': 10,
+            'pages': 1,
+            'posts': data['data']
+          }
+          displayProfiles(cards);
+        });
       }
-
-      $.each(data, function(key, val){
-        item = {'id': key,
-          'status': 'publish'
-        };
-        var rowLength = val.length;
-
-        for(var i = 0; i < rowLength; i++){
-          item[ columns[i] ] = val[i];
-        }
-
-        item['title'] = item['firstname'] + ' ' + item['name'];
-        item['slug'] = item['title'].toLowerCase(); // + ' ' + item['sector'];
-        item['age'] = getAge(item['birthdate']);
-
-        if( (item['storylink']) && (item['storylink'].substring(0, 5) == 'https') && (item['image'].substring(0, 5) == 'https') )
-        {
-          items.push(item);
-        }
-
-      });
-      var cards = {
-        'count': 10,
-        'count_total': 10,
-        'pages': 1,
-        'posts': items
-      }
+    }
+    function displayProfiles(cards){
       displayEvents(cards);
       stylePagination();
-    });
+      bLazy.revalidate();
+    }
 
     function displayEvents(data){
         var source   = $("#event-template").html();
@@ -92,13 +131,6 @@ jQuery(document).ready(function($)
         preventLinkBehavior();
     }
 
-    Handlebars.registerHelper('checkIfPremium', function(value, options) {
-        if ( value == '1')
-        {
-            var badgeReturned = '<span class="card-chip mdl-chip"><span class="card-chip__text mdl-chip__text">Premium</span></span>'
-        }
-        return badgeReturned;
-    })
 
 
     var d = new Date();
@@ -272,6 +304,7 @@ jQuery(document).ready(function($)
     var targetSelector = '.event';
 
     function getSelectorFromHash() {
+        bLazy.revalidate();
         var pathname = ''; // window.location.pathname.replace(/^.+\/index\.php\/?|\/|\/?evenements\-staging\/?|\/?evenements\/?/g, '');
         pathname = pathname.split('/').join('.');
 
@@ -290,6 +323,8 @@ jQuery(document).ready(function($)
     }
 
     function setHash(state) {
+        bLazy.revalidate();
+
         var selector = state.activeFilter.selector;
 
         parts = selector.split('.');
@@ -398,4 +433,6 @@ jQuery(document).ready(function($)
 
     }
 
+    var bLazy = new Blazy();
+    var pymChild = new pym.Child();
 });
