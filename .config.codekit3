@@ -583,16 +583,6 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"/assets/js/min/main-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/assets/js/min/main-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"/assets/js/mixitup-min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -1563,14 +1553,6 @@
 		"ft": 524288,
 		"oA": 1,
 		"oAP": "/data/archive-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"/data/sample.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/data/sample-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
