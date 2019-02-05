@@ -8,12 +8,19 @@ change dataset
 https://www.kunkalabs.com/mixitup/docs/api-methods/
 */
 
-jQuery(document).ready(function($)
-{
+jQuery(document).ready(function($) {
+    var pymChild = new pym.Child();
 
     function stylePagination(){
         $('.mixitup-page-list').find('button').addClass('mdl-button');
+
+        setTimeout(function(){
+           pymChild.sendHeight();
+        }, 200);
+       
     }
+
+
 
     // basé sur fcn par naveen: https://stackoverflow.com/questions/4060004/calculate-age-given-the-birth-date-in-the-format-yyyymmdd/7091965#7091965
     function getAge(dateString) {
@@ -118,6 +125,7 @@ jQuery(document).ready(function($)
       displayEvents(cards);
       stylePagination();
       bLazy.revalidate();
+      pymChild.sendHeight();
     }
 
     function displayEvents(data){
@@ -127,7 +135,7 @@ jQuery(document).ready(function($)
         $(".grid").html(html);
 
         initMixer();
-        hideOverlay()
+        //hideOverlay()
         preventLinkBehavior();
     }
 
@@ -374,6 +382,8 @@ jQuery(document).ready(function($)
                 onMixEnd: setHash,
                 onMixFail: function() {
                      showErrorMessage();
+
+
                 }
             }
         });
@@ -403,6 +413,7 @@ jQuery(document).ready(function($)
 
     function showErrorMessage(){
          $errorMessage.fadeIn();
+            pymChild.sendHeight();
     }
 
     function resetUi(){
@@ -434,5 +445,4 @@ jQuery(document).ready(function($)
     }
 
     var bLazy = new Blazy();
-    var pymChild = new pym.Child();
 });
