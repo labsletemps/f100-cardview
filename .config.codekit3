@@ -7,7 +7,7 @@
 		"uuidString": "3187371A-6B72-4F4B-AF56-6FC65DC500E1"
 		}
 	],
-"creatorBuild": "28905",
+"creatorBuild": "28901",
 "files": {
 	"/.gitignore": {
 		"cB": 0,
@@ -443,16 +443,6 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"/assets/js/blazy.min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/assets/js/blazy.min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"/assets/js/debug.addIndicators.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -579,16 +569,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/assets/js/main-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/assets/js/min/main-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/assets/js/min/main-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1558,29 +1538,6 @@
 		"oF": 1,
 		"oS": 0,
 		"uL": 1
-		},
-	"/data/archive.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/data/archive-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"/data/sample.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/data/sample-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"/embed_code.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "/embed_code.html",
-		"oF": 0
 		},
 	"/img/article-card-fioul-lourd.jpg": {
 		"ft": 16384,
@@ -2863,6 +2820,13 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "/indexLT.php",
+		"oF": 0
+		},
+	"/pymjs_sample.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "/pymjs_sample.html",
 		"oF": 0
 		},
 	"/README.md": {

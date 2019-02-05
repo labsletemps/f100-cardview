@@ -70,10 +70,11 @@ html
 
 body 
 {
-  background:rgb(231, 231, 231);
+  // background:rgb(231, 231, 231);
+  background: transparent;
   position: relative;
-  height: 100vh;
-  line-height: 0;
+  /* height: 100vh; */
+  line-height: 0; 
 }
 
 img 

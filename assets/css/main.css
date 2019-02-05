@@ -43,9 +43,9 @@ html {
   font-size: 16px; }
 
 body {
-  background: #e7e7e7;
+  background: transparent;
   position: relative;
-  height: 100vh;
+  /* height: 100vh; */
   line-height: 0; }
 
 img {
@@ -245,11 +245,9 @@ header {
       height: 250px; } }
 
 .hello-form {
-  width: 95%;
-  max-width: 1000px;
+  width: 100%;
   background: white;
   margin: auto;
-  margin-top: 20px;
   height: 80px;
   padding: 20px 30px 0 30px;
   margin-bottom: 20px; }
@@ -291,9 +289,7 @@ header {
         width: 100%; }
 
 .grid {
-  width: calc(1000px + 1.333%);
-  max-width: 95%;
-  /* width: calc(1000px + 1.333%); */
+  width: 100%;
   margin-top: 1em;
   margin: auto;
   float: none;
