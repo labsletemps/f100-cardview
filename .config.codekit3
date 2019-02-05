@@ -443,6 +443,16 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/assets/js/blazy.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/js/blazy.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/assets/js/debug.addIndicators.min.js": {
 		"ft": 64,
 		"ma": 0,
