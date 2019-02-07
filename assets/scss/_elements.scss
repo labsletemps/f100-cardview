@@ -74,13 +74,18 @@ $duration: 1.4s;
   @include breakpoint(md) {
      &.is-pinned {
       position: fixed;
-      border-top: 1px solid #efefef;
+      //border-top: 1px solid #efefef;
       /* top: 0; */
       bottom: 0;
       z-index: 10; 
       background: white;
       width: 100%;
       padding: 0;
+
+      //   @include breakpoint(md) {
+      //    max-width: 97%;
+      //    padding-bottom: 50px
+      // }
 
       
     }  

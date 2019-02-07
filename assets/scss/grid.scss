@@ -11,6 +11,7 @@
 
     @include breakpoint(md) {
        max-width: 97%;
+       padding-bottom: 50px
     }
 
     @include breakpoint(sm) {
@@ -33,10 +34,15 @@
          width: 48%;
       }*/
 
+      @include breakpoint(md) {
+        width: 48%;
+      }
+
       @include breakpoint(sm) {
         margin-right: 0;
         margin-left: 0;
         width: 100%;
+        margin-bottom: 15px;
       }
     }
 }
@@ -51,7 +57,7 @@
 
   @include breakpoint(sm) {
     display: block !important;
-    height: 180px;
+    height: 154px;
     min-height: 0!important;
   }
 
@@ -143,6 +149,12 @@
         //font-weight: 900;
         font-family: Roboto;
 
+        
+        @include breakpoint(sm) {
+          font-size: 12px;
+        }
+
+
         .card-meta--tag
         {
           float: right;
@@ -176,10 +188,12 @@
       color: black !important;
       margin: 0;
       display: none;
-      padding: 4px 10px;
+      padding: 4px 0;
+      text-align: left;
 
       @include breakpoint(sm) {
         display: block;
+
       }
     }
 
@@ -191,7 +205,8 @@
 
     @include breakpoint(sm) {
       width: calc(100% - 130px) !important;
-      padding-top: 0;
+      padding: 16px;
+      height: 100px;
     }
 
     .desc-txt
@@ -227,17 +242,7 @@
       padding: 7px 16px;
     }
 
-    .share-menu
-    {
-      float: right;
-      //height: 100%;
-      padding-left: 13px;
-      padding-top: 12px;
-      position: absolute;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+    
 
     .nav-menu
     {
@@ -274,6 +279,14 @@
     // -moz-osx-font-smoothing: grayscale;
     // text-rendering: optimizeLegibility;
     font-weight: 400;
+
+    @include breakpoint(lg) {
+      padding: 0 11px;
+    }
+
+    @include breakpoint(md) {
+        padding: 0 16px;
+    }
   }
 
   .lt-button
@@ -322,3 +335,11 @@
     }
   }
 }
+
+.share-menu
+    {
+
+      @include breakpoint(sm) {
+        display: none;
+      }
+    }
