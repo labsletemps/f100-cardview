@@ -32,32 +32,6 @@ h6 {
   margin: 0 !important;
   display: inline; }
 
-.mdl-textfield {
-  font-family: 'ratio_reg' !important; }
-
-.mdl-textfield__input {
-  font-family: 'ratio_reg' !important; }
-
-.card-chip {
-  font-family: 'ratio_reg' !important; }
-
-.card-title {
-  font-family: 'Rooney_medium'; }
-
-.card-meta {
-  font-family: 'ratio_reg'; }
-
-.card-desc {
-  font-family: 'rooney_light'; }
-
-.popup-newsletter--header--title {
-  font-family: 'ratio_light'; }
-
-.popup-newsletter--body--text {
-  font-family: 'ratio_reg'; }
-  .popup-newsletter--body--text b {
-    font-family: 'ratio_medium'; }
-
 a {
   color: inherit !important;
   text-decoration: none; }

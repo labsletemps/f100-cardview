@@ -44,9 +44,10 @@
 .card
 {
   width: auto !important;
-  height: 310px;
+  // height: 310px;
   position: relative;
   overflow: visible !important;
+  background: #f5f5f5 !important;
 
   @include breakpoint(sm) {
     display: block !important;
@@ -137,7 +138,7 @@
         width: 100%;
         color: rgba(0, 0, 0, .54);
         text-transform: uppercase;
-        font-size: 11px;
+        font-size: 14px;
         margin-bottom: 6px;
         //font-weight: 900;
         font-family: Roboto;
@@ -186,6 +187,7 @@
   {
     color: #4e4e4e !important;
     width: 100% !important;
+    height: 70px;
 
     @include breakpoint(sm) {
       width: calc(100% - 130px) !important;
@@ -247,6 +249,71 @@
       right: 50px;
       top: 50%;
       transform: translateY(-50%);
+    }
+  }
+}
+
+.mdl-card__menu .mdl-button
+{
+  // background: rgba(0, 0, 0, .3);
+  // color: rgba(255, 255, 255, .5);
+  color: white;
+}
+
+.mdl-card__actions
+{
+  .mdl-button
+  {
+    color: white !important;
+    // -webkit-font-smoothing: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
+    // text-rendering: optimizeLegibility;
+    font-weight: 400;
+  }
+
+  .lt-button
+  {
+    background: #930025;
+
+    &:hover
+    {
+      background: lighten(#930025, 10%);
+    }
+    &:focus
+    {
+      background: lighten(#930025, 10%);
+    }
+  }
+
+  .li-button
+  {
+    //background: #0075b3;
+    color: #0077b5 !important;
+    border: 1px solid #0077b5;
+
+    &:hover
+    {
+      //background: lighten(#0077b5, 10%);
+    }
+    &:focus
+    {
+      //background: lighten(#0077b5, 10%);
+    }
+  }
+
+  .tw-button
+  {
+    //background: #00a4f5;
+    color: #00a7f8 !important;
+    border: 1px solid #00a7f8;
+
+    &:hover
+    {
+      //background: lighten(#00a7f8, 10%);
+    }
+    &:focus
+    {
+      //background: lighten(#00a7f8, 10%);
     }
   }
 }

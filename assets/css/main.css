@@ -94,32 +94,6 @@ h6 {
   margin: 0 !important;
   display: inline; }
 
-.mdl-textfield {
-  font-family: 'ratio_reg' !important; }
-
-.mdl-textfield__input {
-  font-family: 'ratio_reg' !important; }
-
-.card-chip {
-  font-family: 'ratio_reg' !important; }
-
-.card-title {
-  font-family: 'Rooney_medium'; }
-
-.card-meta {
-  font-family: 'ratio_reg'; }
-
-.card-desc {
-  font-family: 'rooney_light'; }
-
-.popup-newsletter--header--title {
-  font-family: 'ratio_light'; }
-
-.popup-newsletter--body--text {
-  font-family: 'ratio_reg'; }
-  .popup-newsletter--body--text b {
-    font-family: 'ratio_medium'; }
-
 a {
   color: inherit !important;
   text-decoration: none; }
@@ -265,8 +239,7 @@ header {
     text-align: center;
     font-weight: 300;
     color: #4e4e4e;
-    margin: 0 0 20px 0;
-    font-family: 'ratio_light' !important; }
+    margin: 0 0 20px 0; }
     @media (max-width: 576px) {
       .hello-form .hello-form--punchline {
         font-size: 2em;
@@ -323,9 +296,9 @@ header {
 
 .card {
   width: auto !important;
-  height: 310px;
   position: relative;
-  overflow: visible !important; }
+  overflow: visible !important;
+  background: #f5f5f5 !important; }
   @media (max-width: 576px) {
     .card {
       display: block !important;
@@ -396,7 +369,7 @@ header {
     width: 100%;
     color: rgba(0, 0, 0, 0.54);
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: 14px;
     margin-bottom: 6px;
     font-family: Roboto; }
     .card .card-meta .card-meta--tag {
@@ -426,7 +399,8 @@ header {
         display: block; } }
   .card .card-desc {
     color: #4e4e4e !important;
-    width: 100% !important; }
+    width: 100% !important;
+    height: 70px; }
     @media (max-width: 576px) {
       .card .card-desc {
         width: calc(100% - 130px) !important;
@@ -469,6 +443,28 @@ header {
       right: 50px;
       top: 50%;
       transform: translateY(-50%); }
+
+.mdl-card__menu .mdl-button {
+  color: white; }
+
+.mdl-card__actions .mdl-button {
+  color: white !important;
+  font-weight: 400; }
+
+.mdl-card__actions .lt-button {
+  background: #930025; }
+  .mdl-card__actions .lt-button:hover {
+    background: #c60032; }
+  .mdl-card__actions .lt-button:focus {
+    background: #c60032; }
+
+.mdl-card__actions .li-button {
+  color: #0077b5 !important;
+  border: 1px solid #0077b5; }
+
+.mdl-card__actions .tw-button {
+  color: #00a7f8 !important;
+  border: 1px solid #00a7f8; }
 
 footer {
   background: #930025;
