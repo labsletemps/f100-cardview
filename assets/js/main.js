@@ -126,6 +126,7 @@ jQuery(document).ready(function($) {
       stylePagination();
       bLazy.revalidate();
       pymChild.sendHeight();
+      componentHandler.upgradeAllRegistered();
     }
 
     function displayEvents(data){
@@ -136,7 +137,7 @@ jQuery(document).ready(function($) {
 
         initMixer();
         //hideOverlay()
-        preventLinkBehavior();
+        //preventLinkBehavior();
     }
 
 

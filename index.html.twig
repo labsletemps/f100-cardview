@@ -48,7 +48,7 @@
 		<script id="event-template" type="text/x-handlebars-template">
 		{% verbatim %}
 			{{#each post}}
-					<div class="event {{genre}} {{sector}} {{canton}}" data-title="{{slug}}">
+					<div class="event {{id}} {{genre}} {{sector}} {{canton}}" data-title="{{slug}}">
 
 						<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="{{storylink}}">
 							<a href="{{storylink}}" target="_blank">
@@ -97,7 +97,7 @@
 
 							<div class="mdl-card__actions mdl-card--border">
 
-							    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect lt-button">
+							    <a href="{{storylink}}" target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect lt-button">
 							      Portrait
 							    </a>
 								{{#if linkedin}}
@@ -118,14 +118,13 @@
 							    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="card-share-menu-{{id}}">
 							      <i class="material-icons">share</i>
 							    </button>
+							    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="card-share-menu-{{id}}">
+								 	<a href="https://www.facebook.com/sharer.php?u={{storylink}}&display=popup&ref=plugin&src=share_button" target="_blank"><li class="mdl-menu__item">Facebook</li></a>
+									<a href="https://twitter.com/intent/tweet?text=Les événement du Temps – {{title}} - {{storylink}}&via=letemps" target="_blank"><li class="mdl-menu__item">Twitter</li></a>
+									<a target="blank" href="https://www.linkedin.com/shareArticle?url={{storylink}}&mini=true&title={{title}}&summary={{custom_fields.event_desc}}&source={{'Le Temps'}}"><li class="mdl-menu__item">Linkedin</li></a>
+								</ul>
 							</div>
-							<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="card-share-menu-{{id}}">>
-							  <li class="mdl-menu__item">Some Action</li>
-							  <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
-							  <li disabled class="mdl-menu__item">Disabled Action</li>
-							  <li class="mdl-menu__item">Yet Another Action</li>
-							</ul>
-
+							
 						</div>
 				</div>
 
@@ -133,7 +132,7 @@
 		{% endverbatim %}
 		</script>
 	</head>
-
+	
 	<body style="padding-top: {{ navBarOffset }};">
 		<!-- <div class="overlay">
 			<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">

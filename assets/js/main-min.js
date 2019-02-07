@@ -14,9 +14,7 @@ return"";var t="",n=" ans";if(!e)return"";e.indexOf("/")<0&&e.indexOf("T00:00:0
 n.age=(n.birthdate,""),
 // TODO allow multiple sectors?
 //var sector_parts = item['sector']
-n.storylink&&"https"==n.storylink.substring(0,5)&&"https"==n.image.substring(0,5)&&a.push(n)}),o({count:10,count_total:10,pages:1,posts:a})}):"archive"==e&&i.getJSON("data/archive.json",function(e){var t;o({count:10,count_total:10,pages:1,posts:e.data})})}function o(e){n(e),r(),M.revalidate(),m.sendHeight()}function n(e){var t=i("#event-template").html(),n,r=Handlebars.compile(t)({post:e.posts});i(".grid").html(r),u(),
-//hideOverlay()
-s()}function a(){var e=new TimelineMax({paused:!1}),t=i(".overlay"),n=t.find(".spinner");e.to(n,.5,{autoAlpha:0,ease:Linear.easeNone},"-=0.0").to(t,.5,{autoAlpha:0,ease:Linear.easeNone},"-=0.0")}
+n.storylink&&"https"==n.storylink.substring(0,5)&&"https"==n.image.substring(0,5)&&a.push(n)}),o({count:10,count_total:10,pages:1,posts:a})}):"archive"==e&&i.getJSON("data/archive.json",function(e){var t;o({count:10,count_total:10,pages:1,posts:e.data})})}function o(e){n(e),r(),M.revalidate(),m.sendHeight(),componentHandler.upgradeAllRegistered()}function n(e){var t=i("#event-template").html(),n,r=Handlebars.compile(t)({post:e.posts});i(".grid").html(r),u()}function a(){var e=new TimelineMax({paused:!1}),t=i(".overlay"),n=t.find(".spinner");e.to(n,.5,{autoAlpha:0,ease:Linear.easeNone},"-=0.0").to(t,.5,{autoAlpha:0,ease:Linear.easeNone},"-=0.0")}
 //Pour ne pas générer une erreur de formulaire dans le cas d'un ENTER dans le champ email
 //Empèche le link quand on share une carte
 function s(){i(".grid button.mdl-js-button").click(function(e){return e.stopPropagation(),!1})}
