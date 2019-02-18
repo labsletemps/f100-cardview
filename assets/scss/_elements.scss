@@ -75,7 +75,7 @@ $duration: 1.4s;
      &.is-pinned {
       position: fixed;
       //border-top: 1px solid #efefef;
-      /* top: 0; */
+      /* top: 0; */ 
       bottom: 0;
       z-index: 10; 
       background: white;
@@ -137,12 +137,12 @@ $duration: 1.4s;
   text-align: center;
   padding: 30px 0 30px 0;
   margin-bottom: 50px;
-  //border: 1px solid $letemps-color-2;
-  background: lighten($letemps-color-2, 50%);
+  //border: 1px solid $letemps-color-1;
+  background: lighten($letemps-color-1, 30%);
 
   .reset-filters 
   {
-    background: $letemps-color-2 !important;
+    background: $letemps-color-1 !important;
 
     i { margin-top: -2px; }
   }
@@ -157,6 +157,6 @@ $duration: 1.4s;
 
 .mdl-button--colored
 {
-  color: $letemps-color-2 !important;
+  color: $letemps-color-1 !important;
 }
 

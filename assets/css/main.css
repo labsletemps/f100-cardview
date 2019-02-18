@@ -460,11 +460,11 @@ header {
       padding: 0 16px; } }
 
 .mdl-card__actions .lt-button {
-  background: #930025; }
+  background: #e36943; }
   .mdl-card__actions .lt-button:hover {
-    background: #c60032; }
+    background: #ea8c6f; }
   .mdl-card__actions .lt-button:focus {
-    background: #c60032; }
+    background: #ea8c6f; }
 
 .mdl-card__actions .li-button {
   color: #0077b5 !important;
@@ -479,7 +479,7 @@ header {
     display: none; } }
 
 footer {
-  background: #930025;
+  background: #e36943;
   padding-bottom: 30px; }
   @media (max-width: 768px) {
     footer {
@@ -546,7 +546,7 @@ footer {
         footer .footer-top .newsletter .newsletter--body button {
           left: 50%;
           transform: translateX(-50%);
-          background: #930025 !important; }
+          background: #e36943 !important; }
     footer .footer-top .promo {
       float: right;
       width: 49%;
@@ -585,9 +585,9 @@ footer {
         margin-bottom: 25px; }
         footer .footer-top .promo .promo--text span {
           font-family: 'rooney_bold';
-          color: #930025; }
+          color: #e36943; }
       footer .footer-top .promo .promo--button {
-        background: #930025;
+        background: #e36943;
         lefT: 50%;
         transform: translateX(-50%); }
   footer .footer-bottom {
@@ -645,15 +645,15 @@ footer {
 
 @keyframes colors {
   0% {
-    stroke: #930025; }
+    stroke: #e36943; }
   25% {
-    stroke: #930025; }
+    stroke: #e36943; }
   50% {
-    stroke: #930025; }
+    stroke: #e36943; }
   75% {
-    stroke: #930025; }
+    stroke: #e36943; }
   100% {
-    stroke: #930025; } }
+    stroke: #e36943; } }
 
 @keyframes dash {
   0% {
@@ -696,7 +696,7 @@ footer {
       background: gainsboro !important;
       box-shadow: none !important; }
     .mixitup-page-list button.mixitup-control-active {
-      background: #930025 !important;
+      background: #e36943 !important;
       color: white; }
 
 .error-message {
@@ -706,9 +706,9 @@ footer {
   text-align: center;
   padding: 30px 0 30px 0;
   margin-bottom: 50px;
-  background: #ffb8c5; }
+  background: #f7d3c8; }
   .error-message .reset-filters {
-    background: #b80021 !important; }
+    background: #e36943 !important; }
     .error-message .reset-filters i {
       margin-top: -2px; }
 
@@ -718,6 +718,6 @@ footer {
   visibility: hidden !important; }
 
 .mdl-button--colored {
-  color: #b80021 !important; }
+  color: #e36943 !important; }
 
 /*# sourceMappingURL=main.css.map */
