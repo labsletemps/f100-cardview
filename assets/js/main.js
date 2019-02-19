@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
         setTimeout(function(){
            pymChild.sendHeight();
         }, 200);
-       
+
     }
 
 
@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
     })
     function loadProfiles(source){
       if ( source == '2019' ){
-        $.getJSON( "http://web.tcch.ch/tv-test/f100_get.php?lastx", function( data ) {
+        $.getJSON( "http://web.tcch.ch/tv-test/f100_get.php", function( data ) {
 
           var items = [];
           var columns = data['values'].shift();
@@ -373,7 +373,7 @@ jQuery(document).ready(function($) {
             },
             load: {
                 // filter: getSelectorFromHash(),
-                //sort: 'date:asc'
+                sort: 'random'
             },
             callbacks: {
                 onMixStart: function() {
