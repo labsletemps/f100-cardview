@@ -274,7 +274,7 @@
 {
   .mdl-button
   {
-    color: white !important;
+    color: white;
     // -webkit-font-smoothing: antialiased;
     // -moz-osx-font-smoothing: grayscale;
     // text-rendering: optimizeLegibility;
@@ -291,47 +291,50 @@
 
   .lt-button
   {
-    background: #e36943;
+    //background: #e36943;
+    color: #e36943 !important;
 
     &:hover
     {
-      background: lighten(#e36943, 10%);
+      //background: lighten(#e36943, 10%);
     }
     &:focus
     {
-      background: lighten(#e36943, 10%);
+      //background: lighten(#e36943, 10%);
     }
   }
 
   .li-button
   {
-    //background: #0075b3;
     color: #0077b5 !important;
-    border: 1px solid #0077b5;
+    // border: 1px solid #0077b5;
+    padding: 0 10px;
+    font-size: 18px;
+    min-width: 10px;
+    transform: translateY(-1px); 
 
     &:hover
     {
-      //background: lighten(#0077b5, 10%);
     }
     &:focus
     {
-      //background: lighten(#0077b5, 10%);
     }
   }
 
   .tw-button
   {
-    //background: #00a4f5;
     color: #00a7f8 !important;
-    border: 1px solid #00a7f8;
+    // border: 1px solid #00a7f8;
+    padding: 0 10px;
+    font-size: 18px;
+    min-width: 10px;
+    transform: translate(-10px, 0);
 
     &:hover
     {
-      //background: lighten(#00a7f8, 10%);
     }
     &:focus
     {
-      //background: lighten(#00a7f8, 10%);
     }
   }
 }
