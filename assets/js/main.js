@@ -21,30 +21,6 @@ jQuery(document).ready(function($) {
     }
 
 
-
-    // basé sur fcn par naveen: https://stackoverflow.com/questions/4060004/calculate-age-given-the-birth-date-in-the-format-yyyymmdd/7091965#7091965
-    function getAge(dateString) {
-      // bypass for now
-      return '';
-
-      var prefix = '';
-      var suffix = ' ans';
-      if(!dateString){
-        return '';
-      }else if( (dateString.indexOf('/') < 0) && (dateString.indexOf('T00:00:00.000Z') < 0) ){
-        prefix = '~';
-        suffix += ''
-      }
-      var today = new Date();
-      var birthDate = new Date(dateString);
-      var age = today.getFullYear() - birthDate.getFullYear();
-      var m = today.getMonth() - birthDate.getMonth();
-      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-      }
-      return prefix + String(age) + suffix;
-    }
-
     loadProfiles('2019');
     /*setTimeout(function(){
       var bLazy = new Blazy();
@@ -62,7 +38,7 @@ jQuery(document).ready(function($) {
     })
     function loadProfiles(source){
       if ( source == '2019' ){
-        $.getJSON( "http://web.tcch.ch/tv-test/f100_get.php", function( data ) {
+        $.getJSON( "https://labs.letemps.ch/forum-des-100/data-2019/", function( data ) {
 
           var items = [];
           var columns = data['values'].shift();
@@ -90,7 +66,6 @@ jQuery(document).ready(function($) {
 
             item['title'] = item['firstname'] + ' ' + item['name'];
             item['slug'] = (item['title'] + ' ' + item['company'] + ' ' + item['function'] + ' ' + item['sector']).toLowerCase(); // + ' ' + item['sector'];
-            item['age'] = getAge(item['birthdate']);
             // TODO allow multiple sectors?
             //var sector_parts = item['sector']
 
