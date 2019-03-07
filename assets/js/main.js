@@ -7,7 +7,7 @@
 change dataset
 https://www.kunkalabs.com/mixitup/docs/api-methods/
 */
-
+var _data;
 jQuery(document).ready(function($) {
     var pymChild = new pym.Child();
 
@@ -38,13 +38,21 @@ jQuery(document).ready(function($) {
     })
     function loadProfiles(source){
       if ( source == '2019' ){
-        $.getJSON( "https://labs.letemps.ch/forum-des-100/data-2019/", function( data ) {
+        $.getJSON( "https://labs.letemps.ch/forum-des-100/data-2019/", function( _data ) {
 
           var items = [];
-          var columns = data['values'].shift();
+
+          // quick fix because of apparrent Sheets Api change
+          data = [];
+          $.each(_data['values'], function(i, value){
+            data.push(value);
+          });
+          console.log(data)
+
+          var columns = data.shift();
           var colNumber = columns.length;
 
-          data = data['values'].filter( function(item){  return item[0] == 1; });
+          data = data.filter( function(item){  return item[0] == 1; });
           data.reverse();
 
           if(window.location.search.indexOf('auteur=') > 0){
