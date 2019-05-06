@@ -47,7 +47,6 @@ jQuery(document).ready(function($) {
           $.each(_data['values'], function(i, value){
             data.push(value);
           });
-          console.log(data)
 
           var columns = data.shift();
           var colNumber = columns.length;
@@ -73,9 +72,8 @@ jQuery(document).ready(function($) {
             }
 
             item['title'] = item['firstname'] + ' ' + item['name'];
-            item['slug'] = (item['title'] + ' ' + item['company'] + ' ' + item['function'] + ' ' + item['sector']).toLowerCase(); // + ' ' + item['sector'];
-            // TODO allow multiple sectors?
-            //var sector_parts = item['sector']
+            item['slug'] = (item['title'] + ' ' + item['company'] + ' ' + item['function'] + ' ' + item['sector']).toLowerCase();
+            item['slug'] = item['slug'].normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 
             if( (item['storylink']) && (item['storylink'].substring(0, 5) == 'https') && (item['image'].substring(0, 5) == 'https') )
             {
