@@ -1,14 +1,22 @@
+html, body {
+  height: auto !important; }
+
 html {
   font-size: 16px; }
 
 body {
-  background: #e7e7e7;
+  background: transparent;
   position: relative;
-  height: 100vh;
+  /* height: 100vh; */
   line-height: 0; }
 
 img {
   display: block;
   width: 100%; }
+
+.container {
+  max-width: 95%;
+  width: 1000px;
+  margin: auto; }
 
 /*# sourceMappingURL=_base.css.map */

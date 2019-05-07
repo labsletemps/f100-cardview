@@ -1,55 +1,58 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 //=====================================================================//
 // COLORS
 //=====================================================================//
-$letemps-color-1: #e36943;  
+$letemps-color-1: #e36943;
 $letemps-color-2: #b80021;
 $gray-light: #f2f2f2;
-$gray-light-gray-text: #7f8081;  
+$gray-light-gray-text: #7f8081;
 //=====================================================================//
 // FONTS
 //=====================================================================//
 
 // headings
-@include font-face("ratio_light", "../fonts/ratio_light", $file-formats: eot woff ttf svg); 
-@include font-face("ratio_reg", "../fonts/ratio_reg", $file-formats: eot woff ttf svg); 
-@include font-face("ratio_medium", "../fonts/ratio_medium", $file-formats: eot woff ttf svg); 
-@include font-face("ratio_bold", "../fonts/ratio_bold", $file-formats: eot woff ttf svg);  
+@mixin font-face(){
+  @include font-face("ratio_light", "../fonts/ratio_light", $file-formats: eot woff ttf svg);
+  @include font-face("ratio_reg", "../fonts/ratio_reg", $file-formats: eot woff ttf svg);
+  @include font-face("ratio_medium", "../fonts/ratio_medium", $file-formats: eot woff ttf svg);
+  @include font-face("ratio_bold", "../fonts/ratio_bold", $file-formats: eot woff ttf svg);
 
-// paragraphs
-@include font-face("rooney_light", "../fonts/rooney_light", $file-formats: eot woff ttf svg); 
-@include font-face("rooney_medium", "../fonts/rooney_medium", $file-formats: eot woff ttf svg); 
-@include font-face("rooney_bold", "../fonts/rooney_bold", $file-formats: eot woff ttf svg); 
+  // paragraphs
+  @include font-face("rooney_light", "../fonts/rooney_light", $file-formats: eot woff ttf svg);
+  @include font-face("rooney_medium", "../fonts/rooney_medium", $file-formats: eot woff ttf svg);
+  @include font-face("rooney_bold", "../fonts/rooney_bold", $file-formats: eot woff ttf svg);
 
-// numbers
-@include font-face("tungsten", "../fonts/tungsten-medium", $file-formats: eot woff ttf svg); 
+  // numbers
+  @include font-face("tungsten", "../fonts/tungsten-medium", $file-formats: eot woff ttf svg);
+}
+
 
 
 
 //=====================================================================//
 // BREAKPOINTS (BOOTSTRAP)
 //=====================================================================//
-@mixin breakpoint($class) { 
+@mixin breakpoint($class) {
   @if $class == xs {
     @media (max-width: 400px) { @content; }
   }
- 
+
   @else if $class == sm {
-    @media (max-width: 576px) { @content; }  
+    @media (max-width: 576px) { @content; }
   }
- 
+
   @else if $class == md {
     @media (max-width: 768px) { @content; }
   }
- 
+
   @else if $class == lg {
     @media (max-width: 992px) { @content; }
   }
 
   @else if $class == xl {
     @media (max-width: 1440px) { @content; }
-  } 
- 
+  }
+
   @else {
     @warn "Breakpoint mixin supports: xs, sm, md, lg, xl";
   }
@@ -63,27 +66,27 @@ html, body
   height: auto !important;
 }
 
-html 
-{ 
+html
+{
     font-size: 16px;
 }
 
-body 
+body
 {
   // background:rgb(231, 231, 231);
   background: transparent;
   position: relative;
   /* height: 100vh; */
-  line-height: 0; 
+  line-height: 0;
 }
 
-img 
-{ 
-  display:block; 
-  width: 100%; 
+img
+{
+  display:block;
+  width: 100%;
 }
 
-.container 
+.container
 {
   max-width: 95%;
     width: 1000px;

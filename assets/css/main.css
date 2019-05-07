@@ -7,38 +7,6 @@
   box-sizing: border-box; }
 
 /*Boxes settings*/
-@font-face {
-  font-family: "ratio_light";
-  src: url("../fonts/ratio_light.eot?#iefix") format("embedded-opentype"), url("../fonts/ratio_light.woff") format("woff"), url("../fonts/ratio_light.ttf") format("truetype"), url("../fonts/ratio_light.svg#ratio_light") format("svg"); }
-
-@font-face {
-  font-family: "ratio_reg";
-  src: url("../fonts/ratio_reg.eot?#iefix") format("embedded-opentype"), url("../fonts/ratio_reg.woff") format("woff"), url("../fonts/ratio_reg.ttf") format("truetype"), url("../fonts/ratio_reg.svg#ratio_reg") format("svg"); }
-
-@font-face {
-  font-family: "ratio_medium";
-  src: url("../fonts/ratio_medium.eot?#iefix") format("embedded-opentype"), url("../fonts/ratio_medium.woff") format("woff"), url("../fonts/ratio_medium.ttf") format("truetype"), url("../fonts/ratio_medium.svg#ratio_medium") format("svg"); }
-
-@font-face {
-  font-family: "ratio_bold";
-  src: url("../fonts/ratio_bold.eot?#iefix") format("embedded-opentype"), url("../fonts/ratio_bold.woff") format("woff"), url("../fonts/ratio_bold.ttf") format("truetype"), url("../fonts/ratio_bold.svg#ratio_bold") format("svg"); }
-
-@font-face {
-  font-family: "rooney_light";
-  src: url("../fonts/rooney_light.eot?#iefix") format("embedded-opentype"), url("../fonts/rooney_light.woff") format("woff"), url("../fonts/rooney_light.ttf") format("truetype"), url("../fonts/rooney_light.svg#rooney_light") format("svg"); }
-
-@font-face {
-  font-family: "rooney_medium";
-  src: url("../fonts/rooney_medium.eot?#iefix") format("embedded-opentype"), url("../fonts/rooney_medium.woff") format("woff"), url("../fonts/rooney_medium.ttf") format("truetype"), url("../fonts/rooney_medium.svg#rooney_medium") format("svg"); }
-
-@font-face {
-  font-family: "rooney_bold";
-  src: url("../fonts/rooney_bold.eot?#iefix") format("embedded-opentype"), url("../fonts/rooney_bold.woff") format("woff"), url("../fonts/rooney_bold.ttf") format("truetype"), url("../fonts/rooney_bold.svg#rooney_bold") format("svg"); }
-
-@font-face {
-  font-family: "tungsten";
-  src: url("../fonts/tungsten-medium.eot?#iefix") format("embedded-opentype"), url("../fonts/tungsten-medium.woff") format("woff"), url("../fonts/tungsten-medium.ttf") format("truetype"), url("../fonts/tungsten-medium.svg#tungsten") format("svg"); }
-
 html, body {
   height: auto !important; }
 
