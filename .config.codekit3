@@ -1821,6 +1821,14 @@
 		"oAP": "/build/.gitignore",
 		"oF": 0
 		},
+	"/data/people.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/data/people-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"/img/article-card-fioul-lourd.jpg": {
 		"ft": 16384,
 		"iS": 73503,
