@@ -38,7 +38,7 @@ jQuery(document).ready(function($) {
     })
     function loadProfiles(source){
       if ( source == '2019' ){
-        $.getJSON( "https://labs.letemps.ch/forum-des-100/data-2019/", function( _data ) {
+        $.getJSON( "https://labs.letemps.ch/forum-des-100/data-2019/static.json", function( _data ) {
 
           var items = [];
 
