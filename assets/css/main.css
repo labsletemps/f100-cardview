@@ -14,10 +14,12 @@ html {
   font-size: 16px; }
 
 body {
-  background: #e7e7e7;
+  background: transparent;
   position: relative;
   /* height: 100vh; */
-  line-height: 0; }
+  line-height: 0;
+  max-width: 960px;
+  margin: auto !important; }
 
 img {
   display: block;
@@ -247,7 +249,7 @@ header {
     .grid {
       max-width: 95%; } }
   .grid div.event {
-    width: 48%;
+    width: 31.33332%;
     margin-right: 1%;
     margin-left: 1%;
     float: lefT;
@@ -257,9 +259,6 @@ header {
          margin-bottom: 15px;
          width: 48%;
       }*/ }
-    @media (max-width: 768px) {
-      .grid div.event {
-        width: 48%; } }
     @media (max-width: 506px) {
       .grid div.event {
         margin-right: 0;
@@ -639,10 +638,10 @@ footer {
 
 .mixitup-page-list {
   text-align: center;
-  padding: 30px 0 60px 0; }
+  padding: 10px 0 20px 0; }
   @media (max-width: 768px) {
     .mixitup-page-list {
-      padding: 15px 0 30px 0; } }
+      padding: 5px 0 5px 0; } }
   @media (max-width: 768px) {
     .mixitup-page-list.is-pinned {
       /*position: fixed;

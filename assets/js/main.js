@@ -16,8 +16,10 @@ jQuery(document).ready(function($) {
 
         setTimeout(function(){
            pymChild.sendHeight();
-        }, 200);
-
+        }, 300);
+        setTimeout(function(){
+           pymChild.sendHeight();
+        }, 1200);
     }
 
 

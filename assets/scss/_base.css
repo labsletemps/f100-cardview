@@ -5,10 +5,12 @@ html {
   font-size: 16px; }
 
 body {
-  background: #e7e7e7;
+  background: transparent;
   position: relative;
   /* height: 100vh; */
-  line-height: 0; }
+  line-height: 0;
+  max-width: 960px;
+  margin: auto !important; }
 
 img {
   display: block;
