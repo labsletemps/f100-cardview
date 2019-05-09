@@ -342,7 +342,7 @@ jQuery(document).ready(function($) {
                  target: '.event'
             },
              pagination: {
-                 limit: 6,
+                 limit: 4,
                  hidePageListIfSinglePage: true
              },
             animation: {
@@ -354,7 +354,7 @@ jQuery(document).ready(function($) {
             },
             load: {
                 // filter: getSelectorFromHash(),
-                sort: 'random'
+                sort: 'name'
             },
             callbacks: {
                 onMixStart: function() {

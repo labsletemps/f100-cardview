@@ -1,6 +1,104 @@
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: white;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .overlay .spinner-wrapper {
+    transform: scale(0.5); }
+  .overlay .spinner {
+    position: absolute;
+    animation: rotator 1.4s linear infinite;
+    transform: scale(0.5); }
+  .overlay .path {
+    stroke-dasharray: 187;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite; }
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(270deg); } }
+
+@keyframes colors {
+  0% {
+    stroke: #930025; }
+  25% {
+    stroke: #930025; }
+  50% {
+    stroke: #930025; }
+  75% {
+    stroke: #930025; }
+  100% {
+    stroke: #930025; } }
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187; }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform: rotate(135deg); }
+  100% {
+    stroke-dashoffset: 187;
+    transform: rotate(450deg); } }
+
+.mixitup-page-list {
+  text-align: center;
+  padding: 30px 0 60px 0; }
+  @media (max-width: 768px) {
+    .mixitup-page-list {
+      padding: 15px 0 30px 0; } }
+  @media (max-width: 768px) {
+    .mixitup-page-list.is-pinned {
+      /*position: fixed;
+      bottom: 0;
+      z-index: 10;
+      background: white;
+      width: 100%;
+      padding: 0;*/ } }
+  .mixitup-page-list.mixitup-page-list-disabled {
+    display: none; }
+  .mixitup-page-list button {
+    min-width: 39px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    margin: 0 2px; }
+    @media (max-width: 768px) {
+      .mixitup-page-list button {
+        margin: 10px 2px; } }
+    .mixitup-page-list button:not(.mixitup-control-active) {
+      background: gainsboro !important;
+      color: black; }
+    .mixitup-page-list button.mixitup-control-disabled {
+      background: gainsboro !important;
+      box-shadow: none !important; }
+    .mixitup-page-list button.mixitup-control-active {
+      background: #930025 !important;
+      color: white; }
+
+.error-message {
+  width: 1000px;
+  max-width: 95%;
+  margin: auto;
+  text-align: center;
+  padding: 30px 0 30px 0;
+  margin-bottom: 50px;
+  background: #ffb8c5; }
+  .error-message .reset-filters {
+    background: #930025 !important; }
+    .error-message .reset-filters i {
+      margin-top: -2px; }
+
 #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error, #mc_embed_signup div.mce_inline_error {
   color: yellow !important;
   display: none !important;
   visibility: hidden !important; }
+
+.mdl-button--colored {
+  color: #930025 !important; }
 
 /*# sourceMappingURL=_elements.css.map */

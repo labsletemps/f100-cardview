@@ -1,14 +1,14 @@
-@charset "UTF-8";  
+@charset "UTF-8";
 
 //=====================================================================//
 // MIXINS
 //=====================================================================//
-@import "lib/bourbon"; /*Bourbon mixins*/          
+@import "lib/bourbon"; /*Bourbon mixins*/
 
 //=====================================================================//
 // FIX
 //=====================================================================//
-@import "barbarian_reset.scss"; /*Boxes settings*/    
+@import "barbarian_reset.scss"; /*Boxes settings*/
 @import "base.scss";
 @import "typography.scss";
 @import "header.scss";
@@ -16,5 +16,4 @@
 @import "grid.scss";
 @import "footer.scss";
 @import "elements.scss";
-@import "shame.scss";   
-   
+@import "shame.scss";

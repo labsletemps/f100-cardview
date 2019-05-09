@@ -1,6 +1,33 @@
 $offset: 187;
 $duration: 1.4s;
-.overlay 
+$letemps-color-1: #930025;
+$letemps-color-2: #b80021;
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: 400px) { @content; }
+  }
+
+  @else if $class == sm {
+    @media (max-width: 506px) { @content; } // 776
+  }
+
+  @else if $class == md {
+    @media (max-width: 768px) { @content; }
+  }
+
+  @else if $class == lg {
+    @media (max-width: 992px) { @content; }
+  }
+
+  @else if $class == xl {
+    @media (max-width: 1440px) { @content; }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg, xl";
+  }
+}
+.overlay
 {
 	position: fixed;
 	height: 100%;
@@ -10,13 +37,13 @@ $duration: 1.4s;
    display: flex;
    align-items: center;
    justify-content: center;
-   
+
   .spinner-wrapper
   {
     transform: scale(0.5);
   }
-  
-  .spinner 
+
+  .spinner
   {
     position: absolute;
     // top: 50%;
@@ -26,13 +53,13 @@ $duration: 1.4s;
     transform: scale(0.5);
   }
 
-  .path 
+  .path
   {
     stroke-dasharray: $offset;
     stroke-dashoffset: 0;
     transform-origin: center;
     animation:
-    dash $duration ease-in-out infinite, 
+    dash $duration ease-in-out infinite,
     colors ($duration*4) ease-in-out infinite;
   }
 }
@@ -69,34 +96,32 @@ $duration: 1.4s;
 
   @include breakpoint(md) {
      padding: 15px 0 30px 0;
-  } 
+  }
 
   @include breakpoint(md) {
      &.is-pinned {
-      position: fixed;
-      //border-top: 1px solid #efefef;
-      /* top: 0; */ 
+      /*position: fixed;
       bottom: 0;
-      z-index: 10; 
+      z-index: 10;
       background: white;
       width: 100%;
-      padding: 0;
+      padding: 0;*/
 
       //   @include breakpoint(md) {
       //    max-width: 97%;
       //    padding-bottom: 50px
       // }
 
-      
-    }  
-  } 
 
-  &.mixitup-page-list-disabled 
+    }
+  }
+
+  &.mixitup-page-list-disabled
   {
     display: none;
   }
 
-  button 
+  button
   {
     min-width: 39px;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
@@ -104,7 +129,7 @@ $duration: 1.4s;
 
     @include breakpoint(md) {
        margin: 10px 2px;
-    } 
+    }
 
 
     &:not(.mixitup-control-active)
@@ -122,8 +147,8 @@ $duration: 1.4s;
 
     &.mixitup-control-active
     {
-      background: $color !important;
-    
+      background: #930025 !important; // version f100: $color
+
       color: white;
     }
   }
@@ -138,9 +163,10 @@ $duration: 1.4s;
   padding: 30px 0 30px 0;
   margin-bottom: 50px;
   //border: 1px solid $letemps-color-1;
-  background: lighten($letemps-color-1, 30%);
+	background: lighten($letemps-color-2, 50%);
 
-  .reset-filters 
+
+  .reset-filters
   {
     background: $letemps-color-1 !important;
 
@@ -159,4 +185,3 @@ $duration: 1.4s;
 {
   color: $letemps-color-1 !important;
 }
-

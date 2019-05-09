@@ -2,7 +2,7 @@
 //=====================================================================//
 // COLORS
 //=====================================================================//
-$letemps-color-1: #e36943;
+$letemps-color-1: #930025;
 $letemps-color-2: #b80021;
 $gray-light: #f2f2f2;
 $gray-light-gray-text: #7f8081;
@@ -38,7 +38,7 @@ $gray-light-gray-text: #7f8081;
   }
 
   @else if $class == sm {
-    @media (max-width: 576px) { @content; }
+    @media (max-width: 506px) { @content; } // 776
   }
 
   @else if $class == md {
@@ -73,8 +73,8 @@ html
 
 body
 {
-  // background:rgb(231, 231, 231);
-  background: transparent;
+  background:rgb(231, 231, 231);
+  // background: transparent;
   position: relative;
   /* height: 100vh; */
   line-height: 0;

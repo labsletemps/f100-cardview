@@ -1,3 +1,25 @@
+$letemps-color-1: #930025;
+$letemps-color-2: #b80021;
+$gray-light: #f2f2f2;
+$gray-light-gray-text: #7f8081;
+
+@mixin font-face(){
+  @include font-face("ratio_light", "../fonts/ratio_light", $file-formats: eot woff ttf svg);
+  @include font-face("ratio_reg", "../fonts/ratio_reg", $file-formats: eot woff ttf svg);
+  @include font-face("ratio_medium", "../fonts/ratio_medium", $file-formats: eot woff ttf svg);
+  @include font-face("ratio_bold", "../fonts/ratio_bold", $file-formats: eot woff ttf svg);
+
+  // paragraphs
+  @include font-face("rooney_light", "../fonts/rooney_light", $file-formats: eot woff ttf svg);
+  @include font-face("rooney_medium", "../fonts/rooney_medium", $file-formats: eot woff ttf svg);
+  @include font-face("rooney_bold", "../fonts/rooney_bold", $file-formats: eot woff ttf svg);
+
+  // numbers
+  @include font-face("tungsten", "../fonts/tungsten-medium", $file-formats: eot woff ttf svg);
+}
+
+
+
 .hello-form
 {
     max-width: 800px;
@@ -10,7 +32,8 @@
     height: 100px;
     // overflow: auto;
     padding: 20px 30px 0 30px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 
     @include breakpoint(sm) {
          padding-top: 20px;

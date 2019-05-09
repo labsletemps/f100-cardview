@@ -7,11 +7,11 @@
 
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label
 {
-	color: #e36943 !important;
+	color: #930025 !important;
 }
 
 .mdl-textfield__label:after
 {
-	background: #e36943 !important;
+	background: #930025 !important;
 }
 /*# sourceMappingURL=getmdl-select.min.css.map */

@@ -1813,6 +1813,14 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/build/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/build/.gitignore",
+		"oF": 0
+		},
 	"/img/article-card-fioul-lourd.jpg": {
 		"ft": 16384,
 		"iS": 73503,

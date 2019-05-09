@@ -48,7 +48,7 @@
 		<script id="event-template" type="text/x-handlebars-template">
 		{% verbatim %}
 			{{#each post}}
-					<div class="event {{id}} {{genre}} {{sector}} {{canton}}" data-title="{{slug}}">
+					<div class="event {{id}} {{genre}} {{sector}} {{canton}}" data-title="{{slug}}" data-name="{{name}}">
 
 						<div class="card card-wide mdl-card mdl-shadow--2dp" card-url="{{storylink}}">
 							<a href="{{storylink}}" target="_blank">
@@ -66,7 +66,7 @@
 							</a>
 							<div class="card-desc mdl-card__supporting-text">
 								<div class="mdl-card__title card-title-mobile">
-									<h4 class="mdl-card__title-text">{{{title}}}</h4>
+									<a href="{{storylink}}" target="_blank"><h4 class="mdl-card__title-text">{{{title}}}</h4></a>
 								</div>
 								<span class="card-meta">
 
@@ -74,19 +74,11 @@
 										{{function}}{{#if company}}, {{company}}{{/if}}
 									</span>
 
-
-									<!--<span class="card-meta--tag">
-										{{#if sector}}
-										  #{{sector}}
-										{{/if}}
-									</span>-->
-
-
 								</span>
 
 								<span class="card-meta">
 									<span class="card-meta-info">
-										{{age}}{{desc}}
+										{{desc}}
 									</span>
 								</span>
 
@@ -135,6 +127,8 @@
 	</head>
 
 	<body style="padding-top: {{ navBarOffset }};">
+
+		<!--<h2>Les élus du Forum des 100</h2>-->
 		<!-- <div class="overlay">
 			<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
    				<circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
